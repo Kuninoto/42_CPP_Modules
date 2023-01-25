@@ -2,9 +2,11 @@
 
 <details>
 <summary>CPP00:</summary>
-## Grade: ?/100
-###  Subject: [CPP00 en_subject](./extras/en.subject_CPP00.pdf)
-## Useful links
+<b>Grade:</b> ?/100
+<b>Subject: </b> 
+<a href="./extras/en.subject_CPP00.pdf" target="_blank">CPP00 en_subject</a>
+
+#Useful links
 </details>
 
 <details>
