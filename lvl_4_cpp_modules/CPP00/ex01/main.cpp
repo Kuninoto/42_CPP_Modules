@@ -43,7 +43,7 @@ string get_input(void)
         cin.clear();
         cout << "Please insert a valid input" << endl;
     }
-    return (input);
+    return input;
 }
 
 int main(void)
