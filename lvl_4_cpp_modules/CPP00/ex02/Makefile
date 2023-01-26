@@ -4,7 +4,7 @@ RM = rm -rf
 NAME = payday
 
 SRCS = srcs/Account.cpp\
-	   main.cpp
+	   tests.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
