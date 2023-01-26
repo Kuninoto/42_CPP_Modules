@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cstdlib>
+#include <iostream> // std::cout
+#include <cstdlib> // EXIT_* macros
 
 using std::string;
 using std::cout;

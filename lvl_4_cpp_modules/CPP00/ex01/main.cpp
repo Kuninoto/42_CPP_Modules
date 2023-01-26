@@ -1,5 +1,5 @@
 #include <iostream> // std::cout, std::cin
-#include <cstdlib> // exit() && EXIT_SUCESS macro
+#include <cstdlib> // exit() && EXIT_* macros
 #include <stdio.h> // clearerr()
 #include "PhoneBook.hpp"
 
