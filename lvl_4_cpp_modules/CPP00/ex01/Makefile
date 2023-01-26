@@ -1,16 +1,17 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 RM = rm -rf
-NAME = kuninotopb
+NAME = pb
 
-SRCS = srcs/Contact.cpp
+SRCS = srcs/Contact.cpp\
+	   srcs/PhoneBook.cpp\
 	   main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o kuninotopb
+	$(CC) $(CFLAGS) $(OBJS) -o pb
 
 %.o: %.cpp
 	${CC} ${CFLAGS} -c $< -o $@

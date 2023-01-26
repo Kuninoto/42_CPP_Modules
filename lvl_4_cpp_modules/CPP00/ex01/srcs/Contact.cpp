@@ -1,10 +1,6 @@
-#include <iostream>
-#include <string>
-#include <cstdlib>
-
 #include "Contact.hpp"
 
-/* SETTERS */
+using std::string;
 
 void Contact::setFirstName(string str) {
     this->first_name = str;
@@ -25,8 +21,6 @@ void Contact::setPhoneNumber(string str) {
 void Contact::setDarkestSecret(string str) {
     this->darkest_secret = str;
 }
-
-/* GETTERS */
 
 string Contact::getFirstName(void) {
     return this->first_name;
