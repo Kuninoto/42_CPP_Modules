@@ -1,7 +1,7 @@
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-# include <string>
+#include <string>
 using std::string;
 
 class Zombie {
@@ -18,12 +18,8 @@ class Zombie {
         string name;
 };
 
-/* Creates a Zombie instance, fill its name
-private attribute, and return it*/
-Zombie *newZombie(string name);
-
-/* Creates a Zombie instance, fill its name
-private attribute and the zombie announces itself */
-void randomChump(string name);
+/* Allocate N Zombie objects in a single allocation
+and sets all their names to <name> */
+Zombie  *zombieHorde(int N, string name);
 
 #endif // ZOMBIE_HPP

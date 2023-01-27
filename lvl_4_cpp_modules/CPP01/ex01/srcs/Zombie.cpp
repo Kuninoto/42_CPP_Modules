@@ -1,13 +1,12 @@
 #include "Zombie.hpp"
-#include <iostream>
+#include <iostream> // std::cout, std::endl
 
 using std::string;
 using std::cout;
-using std::cin;
 using std::endl;
 
-Zombie::~Zombie()
-{
+/* Destructor */
+Zombie::~Zombie(void) {
     cout << "Zombie " << getName() << " died 💀" << endl;
 }
 
@@ -16,7 +15,7 @@ void Zombie::setName(string name) {
 }
 
 string Zombie::getName(void) {
-    return name;
+    return this->name;
 }
 
 void Zombie::announce(void) {
