@@ -1,9 +1,12 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
 RM = rm -rf
-NAME = megaphone
+NAME = zombie
 
-SRCS = megaphone.cpp
+SRCS = srcs/Zombie.cpp\
+	   srcs/newZombie.cpp\
+	   srcs/randomChump.cpp\
+	   main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
