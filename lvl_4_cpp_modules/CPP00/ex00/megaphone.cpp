@@ -1,4 +1,4 @@
-#include <iostream> // std::cout
+#include <iostream> // std::string, cout, endl
 #include <cstdlib> // EXIT_* macros
 
 using std::string;

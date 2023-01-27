@@ -1,11 +1,11 @@
-#include <iostream> // std::cout, std::cin
+#include <iostream> // std::string, cin, cout, endl
 #include <cstdlib> // exit() && EXIT_* macros
 #include <stdio.h> // clearerr()
 #include "PhoneBook.hpp"
 
 using std::string;
-using std::cout;
 using std::cin;
+using std::cout;
 using std::endl;
 
 static inline bool is_input_valid(string input) { return input == "ADD" || input == "SEARCH" || input == "EXIT"; }

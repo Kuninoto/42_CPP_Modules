@@ -11,11 +11,21 @@ https://www.geeksforgeeks.org/object-oriented-programming-in-cpp/
 https://stackoverflow.com/questions/4745858/stdcin-getline-vs-stdcin  
 https://stackoverflow.com/questions/27640333/how-do-i-use-atoi-function-with-strings-in-c  
 https://stackoverflow.com/questions/31628940/which-is-faster-c-string-length-or-size  
+https://www.geeksforgeeks.org/constructors-c/  
+https://www.geeksforgeeks.org/destructors-c/  
 
 </details>
 
 <details>
 <summary>CPP01:</summary>
+<b>Grade:</b> ?/100
+<b>Subject: </b> 
+<a href="./extras/en.subject_CPP01.pdf" target="_blank">CPP01 en_subject</a>
+
+#Useful links: 
+https://www.geeksforgeeks.org/constructors-c/  
+https://www.geeksforgeeks.org/destructors-c/  
+
 </details>
 
 <details>
