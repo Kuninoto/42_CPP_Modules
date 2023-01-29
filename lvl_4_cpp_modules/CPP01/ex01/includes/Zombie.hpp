@@ -1,7 +1,7 @@
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-#include <string>
+# include <string>
 using std::string;
 
 class Zombie {
