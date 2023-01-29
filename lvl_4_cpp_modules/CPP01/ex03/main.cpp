@@ -1,13 +1,7 @@
 #include <cstdlib> // EXIT_* MACROS
-#include <iostream> // std::string, std::cin, std::cout, std::endl
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-
-using std::string;
-using std::cin;
-using std::cout;
-using std::endl;
 
 int main(void)
 {
@@ -30,7 +24,3 @@ int main(void)
 	}
 	return EXIT_SUCCESS;
 }
-
-/* A pointer can be declared as void but a reference can never be void 
-So, HumanA thaat will always have a weapon takes it as a reference and
-HumanB as a pointer because he may not have it */
