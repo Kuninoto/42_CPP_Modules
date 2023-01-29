@@ -1,24 +1,31 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -I./includes
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+LINK = -I./includes
+VPATH = srcs
 RM = rm -rf
-NAME = zombie
 
-SRCS = srcs/Zombie.cpp\
-	   srcs/newZombie.cpp\
-	   srcs/randomChump.cpp\
+GENERAL = Zombie newZombie randomChump\
+
+NAME = ex00
+SRCS = $(addsuffix .cpp, $(GENERAL))\
 	   main.cpp
-OBJS = $(SRCS:.cpp=.o)
+
+OBJ_DIR = obj
+OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJ_DIR) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
-	${CC} ${CFLAGS} -c $< -o $@
+$(OBJ_DIR):
+	mkdir -p obj
+
+$(OBJ_DIR)/%.o: %.cpp
+	$(CC) $(CFLAGS) -c $< -o $@ $(LINK)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
 	$(RM) $(NAME)

@@ -4,9 +4,9 @@ LINK = -I./includes
 VPATH = srcs
 RM = rm -rf
 
-GENERAL = Zombie zombieHorde
+GENERAL = Weapon HumanA HumanB
 
-NAME = ex01
+NAME = ex03
 SRCS = $(addsuffix .cpp, $(GENERAL))\
 	   main.cpp
 

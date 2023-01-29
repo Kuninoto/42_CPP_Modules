@@ -1,6 +1,6 @@
-#include "Zombie.hpp"
 #include <cstdlib> // EXIT_* MACROS
 #include <iostream> // std::string, std::cin, std::cout, std::endl
+#include "Zombie.hpp"
 
 using std::string;
 using std::cin;

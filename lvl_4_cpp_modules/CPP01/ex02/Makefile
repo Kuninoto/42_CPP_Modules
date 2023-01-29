@@ -1,14 +1,9 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-LINK = -I./includes
-VPATH = srcs
 RM = rm -rf
 
-GENERAL = Zombie zombieHorde
-
-NAME = ex01
-SRCS = $(addsuffix .cpp, $(GENERAL))\
-	   main.cpp
+NAME = ex02 
+SRCS = main.cpp
 
 OBJ_DIR = obj
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
@@ -22,7 +17,7 @@ $(OBJ_DIR):
 	mkdir -p obj
 
 $(OBJ_DIR)/%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@ $(LINK)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ_DIR)
@@ -36,4 +31,4 @@ run: all clean
 
 .PHONY: all clean fclean re run
 
-#.SILENT:
+.SILENT:
