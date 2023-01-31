@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-LINK = -I./includes
+INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
@@ -22,7 +22,7 @@ $(OBJ_DIR):
 	mkdir -p obj
 
 $(OBJ_DIR)/%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@ $(LINK)
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE)
 
 clean:
 	$(RM) $(OBJ_DIR)

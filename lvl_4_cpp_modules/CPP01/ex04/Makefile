@@ -1,14 +1,9 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-INCLUDE = -I./includes
-VPATH = srcs
 RM = rm -rf
 
-GENERAL = Zombie newZombie randomChump\
-
-NAME = ex00
-SRCS = $(addsuffix .cpp, $(GENERAL))\
-	   main.cpp
+NAME = wannabe_sed
+SRCS = main.cpp
 
 OBJ_DIR = obj
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
@@ -22,7 +17,7 @@ $(OBJ_DIR):
 	mkdir -p obj
 
 $(OBJ_DIR)/%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJ_DIR)
