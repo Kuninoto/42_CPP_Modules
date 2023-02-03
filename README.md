@@ -26,6 +26,7 @@ https://www.geeksforgeeks.org/destructors-c/
 https://www.geeksforgeeks.org/constructors-c/  
 https://www.geeksforgeeks.org/destructors-c/  
 https://www.geeksforgeeks.org/references-in-c/  
+https://www.codeguru.com/cplusplus/c-tutorial-pointer-to-member-function/  
 
 </details>
 
