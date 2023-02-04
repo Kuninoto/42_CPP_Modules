@@ -22,7 +22,7 @@ https://www.geeksforgeeks.org/destructors-c/
 <b>Subject: </b> 
 <a href="./extras/en.subject_CPP01.pdf" target="_blank">CPP01 en_subject</a>
 
-#Useful links: 
+#Useful links:  
 https://www.geeksforgeeks.org/constructors-c/  
 https://www.geeksforgeeks.org/destructors-c/  
 https://www.geeksforgeeks.org/references-in-c/  
@@ -32,6 +32,13 @@ https://www.codeguru.com/cplusplus/c-tutorial-pointer-to-member-function/
 
 <details>
 <summary>CPP02:</summary>
+<b>Grade:</b> ?/100
+<b>Subject: </b> 
+<a href="./extras/en.subject_CPP01.pdf" target="_blank">CPP01 en_subject</a>
+
+#Useful links:  
+https://www.geeksforgeeks.org/copy-constructor-in-cpp/  
+
 </details>
 
 <details>

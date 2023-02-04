@@ -16,6 +16,7 @@ class Harl {
 		void error(void);
 };
 
-typedef void (Harl::*harl_func_t) (void);
+//      Return_Type (Class_Name::* pointer_name) (Argument_List);
+typedef void (Harl::* harl_func_t) (void);
 
 #endif // HARL_HPP
