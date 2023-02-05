@@ -34,10 +34,13 @@ https://www.codeguru.com/cplusplus/c-tutorial-pointer-to-member-function/
 <summary>CPP02:</summary>
 <b>Grade:</b> ?/100
 <b>Subject: </b> 
-<a href="./extras/en.subject_CPP01.pdf" target="_blank">CPP01 en_subject</a>
+<a href="./extras/en.subject_CPP02.pdf" target="_blank">CPP02 en_subject</a>
 
 #Useful links:  
 https://www.geeksforgeeks.org/copy-constructor-in-cpp/  
+https://www.tutorialspoint.com/cplusplus/cpp_overloading.htm  
+https://www.geeksforgeeks.org/fixed-point-representation/  
+https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/  
 
 </details>
 
