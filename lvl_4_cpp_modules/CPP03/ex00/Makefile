@@ -33,6 +33,8 @@ fclean: clean
 re: fclean all
 
 run: all clean
+	echo ""
+	./ex00
 
 .PHONY: all clean fclean re run
 
