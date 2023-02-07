@@ -41,11 +41,18 @@ https://www.geeksforgeeks.org/copy-constructor-in-cpp/
 https://www.tutorialspoint.com/cplusplus/cpp_overloading.htm  
 https://www.geeksforgeeks.org/fixed-point-representation/  
 https://embeddedartistry.com/blog/2018/07/12/simple-fixed-point-conversion-in-c/  
+https://ncalculators.com/geometry/triangle-area-by-3-points.htm  
+https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/  
 
 </details>
 
 <details>
 <summary>CPP03:</summary>
+<b>Grade:</b> ?/100
+<b>Subject: </b> 
+<a href="./extras/en.subject_CPP03.pdf" target="_blank">CPP03 en_subject</a>
+
+#Useful links:  
 </details>
 
 <details>
