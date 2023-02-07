@@ -39,16 +39,21 @@ void ClapTrap::attack(const string& target)
 {
 	cout << "ClapTrap " << this->name 
 	     << " attacks " << target 
-		 << " causing " << this->attack_damage
-		 << " points of damage!" << endl;
+		 << " causing <amount> " 
+		 << "points of damage!" << endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	if (amount > this->hit_points || this->hit_points == 0)
+	if (amount >= this->hit_points || this->hit_points == 0)
 	{
 		cout << "ClapTrap " << this->name << " died" << endl;
 		this->hit_points = 0;
+		return;
+	}
+	else if (this->energy_points == 0)
+	{
+		cout << "ClapTrap has no energy points left!" << endl;
 		return;
 	}
 	this->hit_points -= amount;
@@ -59,6 +64,11 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (this->energy_points == 0)
+	{
+		cout << "ClapTrap has no energy points left!" << endl;
+		return ;
+	}
 	this->hit_points += amount;
 	this->energy_points -= 1;
 	cout << "ClapTrap " << this->name
