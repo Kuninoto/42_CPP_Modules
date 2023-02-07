@@ -2,14 +2,19 @@
 
 <details>
 <summary>CPP00:</summary>
-<b>Grade:</b> ?/100
-<b>Subject: </b> 
-<a href="./extras/en.subject_CPP00.pdf" target="_blank">CPP00 en_subject</a>
+<h3>
+	<b>Grade: </b>
+	<span>?/100</span>
+</h3>
+<h3>
+	<b>Subject:</b>
+	<a href="./extras/en.subject_CPP00.pdf" target="_blank">CPP00 en_subject</a>
+</h3>
 
-#Useful links: 
-https://www.geeksforgeeks.org/object-oriented-programming-in-cpp/  
+<h4>Useful links:</h4>
+https://www.geeksforgeeks.org/  object-oriented-programming-in-cpp/   
 https://stackoverflow.com/questions/4745858/stdcin-getline-vs-stdcin  
-https://stackoverflow.com/questions/27640333/how-do-i-use-atoi-function-with-strings-in-c  
+https://stackoverflow.com/questions/27640333/how-do-i-use-atoi-function-with-strings-in-c   
 https://stackoverflow.com/questions/31628940/which-is-faster-c-string-length-or-size  
 https://www.geeksforgeeks.org/constructors-c/  
 https://www.geeksforgeeks.org/destructors-c/  

@@ -6,7 +6,7 @@ Point::Point(const float x, const float y) : x(x), y(y) {}
 
 Point::Point(const Point &to_copy) : x(to_copy.x), y(to_copy.y) {}
 
-Point &Point::operator=(const Point &original)
+Point& Point::operator=(const Point &original)
 {
 	if (this != &original)
 	{
