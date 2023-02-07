@@ -5,27 +5,24 @@
 using std::cout;
 using std::endl;
 
-Fixed::Fixed(void) {
+Fixed::Fixed(void) : value(0) {
 	#ifdef LOGS
 		cout << "Default constructor called" << endl;
 	#endif
-	this->value = 0;
 }
 
-Fixed::Fixed(const int in_int)
+Fixed::Fixed(const int in_int) : value(in_int * (1 << Fixed::bits))
 {
 	#ifdef LOGS
 		cout << "Int constructor called" << endl;
 	#endif
-	this->value = in_int * (1 << Fixed::bits);
 }
 
-Fixed::Fixed(const float in_float)
+Fixed::Fixed(const float in_float) : value(roundf(in_float * (1 << Fixed::bits)))
 {
 	#ifdef LOGS
 		cout << "Float constructor called" << endl;
 	#endif
-	this->value = roundf(in_float * (1 << Fixed::bits));
 }
 
 Fixed::Fixed(const Fixed &to_copy) {
@@ -166,7 +163,7 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 	return b;
 }
 
-std::ostream &operator<<(std::ostream &out, const Fixed &nbr)
+std::ostream& operator<<(std::ostream &out, const Fixed &nbr)
 {
 	out << nbr.toFloat();
 	return out;

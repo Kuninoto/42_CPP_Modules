@@ -14,7 +14,7 @@ class Fixed {
         // Copy constructor
         Fixed(const Fixed &to_copy);
         // Copy assignment operator overload
-        Fixed &operator=(const Fixed &original);
+        Fixed& operator=(const Fixed &original);
         // Destructor
         ~Fixed(void);
 
@@ -48,6 +48,6 @@ class Fixed {
         static const int bits = 8;
 };
 
-std::ostream &operator<<(std::ostream &out, const Fixed &nbr);
+std::ostream& operator<<(std::ostream &out, const Fixed &nbr);
 
 #endif // FIXED_HPP
