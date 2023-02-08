@@ -27,5 +27,8 @@ int main(void)
 	Jubileus.attack("Robert");
 	Robert.takeDamage(10);
 
+	Jubileus.guardGate();
+	Robert.guardGate();
+
 	return EXIT_SUCCESS;
 }

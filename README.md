@@ -58,6 +58,8 @@ https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle
 <a href="./extras/en.subject_CPP03.pdf" target="_blank">CPP03 en_subject</a>
 
 #Useful links:  
+https://www.geeksforgeeks.org/inheritance-in-c/  
+https://www.geeksforgeeks.org/public-vs-protected-in-c-with-examples/  
 </details>
 
 <details>
