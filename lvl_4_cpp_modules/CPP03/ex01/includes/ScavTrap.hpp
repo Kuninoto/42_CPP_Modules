@@ -1,15 +1,18 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-class ScavTrap
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap 
 {
 	public:
-		ScavTrap(void);
-		~ScavTrap();
+		ScavTrap(string name);
+		~ScavTrap(void);
 
+		void attack(const string& target);
+		void guardGate(void);
 	private:
-
+		ScavTrap(void);
 };
 
-
-#endif
+#endif // SCAVTRAP_HPP

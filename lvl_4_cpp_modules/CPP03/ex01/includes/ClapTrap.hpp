@@ -15,7 +15,7 @@ class ClapTrap
 		void attack(const string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-	private:
+	protected:
 		string name;
 		unsigned int hit_points;
 		unsigned int energy_points;
