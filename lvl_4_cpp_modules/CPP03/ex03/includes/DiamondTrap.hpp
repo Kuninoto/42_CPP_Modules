@@ -1,0 +1,7 @@
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
+
+
+
+
+#endif // DIAMONDTRAP_HPP

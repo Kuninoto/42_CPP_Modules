@@ -4,7 +4,7 @@ INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
-GENERAL = ClapTrap ScavTrap FragTrap
+GENERAL = ClapTrap ScavTrap FragTrap DiamondTrap
 
 NAME = ex02
 SRCS = $(addsuffix .cpp, $(GENERAL))\
