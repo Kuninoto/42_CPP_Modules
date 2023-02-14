@@ -1,12 +1,12 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -O3 -Wshadow -Wno-shadow
 INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
 GENERAL = ClapTrap ScavTrap FragTrap DiamondTrap
 
-NAME = ex02
+NAME = ex03
 SRCS = $(addsuffix .cpp, $(GENERAL))\
 	   main.cpp
 
@@ -34,7 +34,7 @@ re: fclean all
 
 run: all clean
 	echo ""
-	./ex02
+	./$(NAME)
 
 .PHONY: all clean fclean re run
 

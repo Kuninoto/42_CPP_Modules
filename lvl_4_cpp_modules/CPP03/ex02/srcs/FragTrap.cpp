@@ -9,11 +9,11 @@ FragTrap::FragTrap(string name) : ClapTrap(name)
 	this->hit_points = 100;
 	this->energy_points = 100;
 	this->attack_damage = 30;
-	cout << "Subclass (FragTrap) constructor has been called" << endl;
+	cout << "Sub Class (FragTrap) constructor has been called" << endl;
 }
 
 FragTrap::~FragTrap(void) {
-	cout << "Subclass (FragTrap) destructor has been called" << endl;
+	cout << "Sub Class (FragTrap) destructor has been called" << endl;
 }
 
 void FragTrap::highFivesGuys(void) {

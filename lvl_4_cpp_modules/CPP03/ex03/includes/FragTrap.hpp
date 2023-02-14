@@ -3,15 +3,15 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
+		FragTrap(void);
 		FragTrap(string name);
 		~FragTrap(void);
 
 		void highFivesGuys(void);
 	private:
-		FragTrap(void);
 };
 
 #endif // FRAGTRAP_HPP

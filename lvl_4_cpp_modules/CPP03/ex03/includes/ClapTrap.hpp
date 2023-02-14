@@ -7,6 +7,7 @@ using std::string;
 class ClapTrap
 {
 	public:
+		ClapTrap(void);
 		ClapTrap(string name);
 		ClapTrap(const ClapTrap &to_copy);
 		ClapTrap& operator=(const ClapTrap &original);
