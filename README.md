@@ -60,6 +60,8 @@ https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle
 #Useful links:  
 https://www.geeksforgeeks.org/inheritance-in-c/  
 https://www.geeksforgeeks.org/public-vs-protected-in-c-with-examples/  
+https://www.geeksforgeeks.org/multiple-inheritance-in-c/  
+
 </details>
 
 <details>
