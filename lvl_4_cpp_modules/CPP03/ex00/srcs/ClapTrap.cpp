@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(const ClapTrap &to_copy)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &original)
 {
-	if (this != &original)
+	if (*this != original)
 	{
 		this->name = original.name;
 		this->hit_points = original.hit_points;
