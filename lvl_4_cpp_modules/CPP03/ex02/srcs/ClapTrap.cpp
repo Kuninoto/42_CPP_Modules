@@ -15,6 +15,7 @@ ClapTrap::ClapTrap(const ClapTrap &to_copy)
 	this->hit_points = to_copy.hit_points;
 	this->energy_points = to_copy.energy_points;
 	this->attack_damage = to_copy.attack_damage;
+
 	cout << "Super Class (ClapTrap) copy constructor has been called!" << endl;
 }
 
@@ -37,8 +38,7 @@ ClapTrap::~ClapTrap(void) {
 
 void ClapTrap::attack(const string& target)
 {
-	if (this->energy_points == 0)
-	{
+	if (this->energy_points == 0) {
 		cout << "ClapTrap is out of energy points!" << endl;
 		return;
 	}

@@ -4,6 +4,8 @@
 using std::cout;
 using std::endl;
 
+ScavTrap::ScavTrap(void) {};
+
 ScavTrap::ScavTrap(string name) : ClapTrap(name)
 {
 	this->hit_points = 100;
@@ -31,5 +33,5 @@ void ScavTrap::attack(const string& target)
 }
 
 void ScavTrap::guardGate(void) {
-	cout << "ScarvTrap " << this->name << " is now in Gate keeper mode" << endl;
+	cout << "ScavTrap " << this->name << " is now in gate keeper mode" << endl;
 }

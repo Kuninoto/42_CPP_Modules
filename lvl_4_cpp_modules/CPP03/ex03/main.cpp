@@ -1,40 +1,54 @@
 #include <cstdlib>
 #include <iostream>
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 using std::cout;
 using std::endl;
 
 int main(void)
 {
-	FragTrap John("John");
-	FragTrap Albert("Albert");
+    DiamondTrap Bozo("Bozo");
+    DiamondTrap Rato("Rato");
+    DiamondTrap	Clone;
 
-	cout << endl;
+    cout << endl;
 
-	John.attack("Albert");
-	Albert.takeDamage(30);
+    Rato.attack("Bozo");
+    Bozo.takeDamage(30);
 
-	cout << endl;
+    cout << endl;
 
-	John.attack("Albert");
-	Albert.takeDamage(30);
+    Rato.attack("Bozo");
+    Bozo.takeDamage(30);
 
-	cout << endl;
+    cout << endl;
 
-	John.attack("Albert");
-	Albert.takeDamage(30);
+    Rato.attack("Bozo");
+    Bozo.takeDamage(30);
 
-	cout << endl;
+    cout << endl;
 
-	John.attack("Albert");
-	Albert.takeDamage(30);
+    Clone = Bozo;
 
-	cout << endl;
+    cout << endl;
 
-	Albert.beRepaired(100);
+    Rato.attack("Bozo Clone");
+    Clone.takeDamage(30);
 
-	Albert.highFivesGuys();
+    cout << endl;
 
-	return EXIT_SUCCESS;
+    Rato.guardGate();
+
+    cout << endl;
+
+    Clone.beRepaired(100);
+    Clone.highFivesGuys();
+
+    cout << endl;
+
+    Rato.whoAmI();
+
+    cout << endl;
+
+    return EXIT_SUCCESS;
 }
