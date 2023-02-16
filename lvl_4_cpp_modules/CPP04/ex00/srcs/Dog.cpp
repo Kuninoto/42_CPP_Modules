@@ -9,7 +9,7 @@ Dog::Dog(void) : Animal() {
 	this->setType("Dog");
 }
 
-Dog::Dog(const Dog &to_copy) 
+Dog::Dog(const Dog &to_copy) : Animal(to_copy)
 {
 	this->type = to_copy.type;
 	cout << "[Dog] copy constructor has been called " << endl;

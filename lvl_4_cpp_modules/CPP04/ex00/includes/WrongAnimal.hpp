@@ -9,7 +9,7 @@ class WrongAnimal {
 		WrongAnimal(void);
 		WrongAnimal(const WrongAnimal &to_copy);
 		WrongAnimal &operator=(const WrongAnimal &to_copy);
-		~WrongAnimal(void);
+		virtual ~WrongAnimal(void);
 
 		string getType(void) const;
 		void setType(string type);

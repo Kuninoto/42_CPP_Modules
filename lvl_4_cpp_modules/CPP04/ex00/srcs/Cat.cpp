@@ -9,7 +9,7 @@ Cat::Cat(void) : Animal() {
 	this->setType("Cat");
 }
 
-Cat::Cat(const Cat &to_copy) 
+Cat::Cat(const Cat &to_copy) : Animal(to_copy)
 {
 	this->type = to_copy.type;
 	cout << "[Cat] copy constructor has been called " << endl;

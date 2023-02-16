@@ -36,6 +36,10 @@ run: all clean
 	echo ""
 	./$(NAME)
 
+leaks: re clean
+	echo ""
+	valgrind --leak-check=full -s ./$(NAME)
+
 .PHONY: all clean fclean re run
 
 #.SILENT:

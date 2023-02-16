@@ -15,9 +15,10 @@ Cat::Cat(void) : Animal() {
 	}
 }
 
-Cat::Cat(const Cat &to_copy) 
+Cat::Cat(const Cat &to_copy) : Animal(to_copy)
 {
 	this->type = to_copy.type;
+	this->brain = new Brain();
 	cout << "[Cat] copy constructor has been called " << endl;
 }
 
@@ -32,7 +33,7 @@ Cat& Cat::operator=(const Cat &to_copy)
 Cat::~Cat(void)
 {
 	cout << "[Cat] default destructor has been called" << endl;
-	delete brain;
+	delete this->brain;
 }
 
 void Cat::makeSound(void) const {

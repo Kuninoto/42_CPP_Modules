@@ -15,9 +15,10 @@ Dog::Dog(void) : Animal() {
 	}
 }
 
-Dog::Dog(const Dog &to_copy) 
+Dog::Dog(const Dog &to_copy) : Animal(to_copy)
 {
 	this->type = to_copy.type;
+	this->brain = new Brain();
 	cout << "[Dog] copy constructor has been called " << endl;
 }
 
@@ -31,7 +32,7 @@ Dog& Dog::operator=(const Dog &to_copy)
 
 Dog::~Dog(void) {
 	cout << "[Dog] default destructor has been called" << endl;
-	delete brain;
+	delete this->brain;
 }
 
 void Dog::makeSound(void) const {
