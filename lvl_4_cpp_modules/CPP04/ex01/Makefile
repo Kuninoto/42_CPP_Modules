@@ -1,10 +1,10 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -O3 #-Wshadow -Wno-shadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -O3 -Wshadow -Wno-shadow #-fsanitize=address
 INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
-GENERAL = Animal Dog Cat
+GENERAL = Brain Animal Dog Cat
 
 NAME = ex01
 SRCS = $(addsuffix .cpp, $(GENERAL))\
@@ -32,9 +32,13 @@ fclean: clean
 
 re: fclean all
 
-run: all clean
+run: re clean
 	echo ""
 	./$(NAME)
+
+leaks: re clean
+	echo ""
+	valgrind --leak-check=full -s ./$(NAME)
 
 .PHONY: all clean fclean re run
 
