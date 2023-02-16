@@ -11,6 +11,11 @@ class Animal {
 		Animal &operator=(const Animal &to_copy);
 		~Animal(void);
 
+		string getType(void) const;
+		void setType(string type);
+
+		void makeSound(void) const;
+
 	protected:
 		string type;
 };
