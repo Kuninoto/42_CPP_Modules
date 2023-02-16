@@ -4,8 +4,9 @@
 using std::cout;
 using std::endl;
 
-Dog::Dog(void) : Animal("Dog") {
+Dog::Dog(void) : Animal() {
 	cout << "[Dog] default constructor has been called" << endl;
+	this->setType("Dog");
 }
 
 Dog::Dog(const Dog &to_copy) 
@@ -16,7 +17,7 @@ Dog::Dog(const Dog &to_copy)
 
 Dog& Dog::operator=(const Dog &to_copy)
 {
-	if (*this != to_copy)
+	if (this != &to_copy)
 		*this = to_copy;
 	cout << "[Dog] copy assignment constructor has been called " << endl;
 	return *this;
@@ -26,6 +27,6 @@ Dog::~Dog(void) {
 	cout << "[Dog] default destructor has been called" << endl;
 }
 
-Dog::makeSound(void) {
+void Dog::makeSound(void) const {
 	cout << "AuAu 🐕" << endl;
 }
