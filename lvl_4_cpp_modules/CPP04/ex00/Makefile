@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -O3 #-Wshadow -Wno-shadow
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -O3 -Wshadow -Wno-shadow
 INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf

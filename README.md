@@ -24,7 +24,7 @@ https://www.geeksforgeeks.org/destructors-c/
 <details>
 <summary>CPP01:</summary>
 <b>Grade:</b> ?/100
-<b>Subject: </b> 
+<b>Subject: </b>
 <a href="./extras/en.subject_CPP01.pdf" target="_blank">CPP01 en_subject</a>
 
 #Useful links:  
@@ -38,7 +38,7 @@ https://www.codeguru.com/cplusplus/c-tutorial-pointer-to-member-function/
 <details>
 <summary>CPP02:</summary>
 <b>Grade:</b> ?/100
-<b>Subject: </b> 
+<b>Subject: </b>
 <a href="./extras/en.subject_CPP02.pdf" target="_blank">CPP02 en_subject</a>
 
 #Useful links:  
@@ -54,7 +54,7 @@ https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle
 <details>
 <summary>CPP03:</summary>
 <b>Grade:</b> ?/100
-<b>Subject: </b> 
+<b>Subject: </b>
 <a href="./extras/en.subject_CPP03.pdf" target="_blank">CPP03 en_subject</a>
 
 #Useful links:  
@@ -66,6 +66,12 @@ https://www.geeksforgeeks.org/multiple-inheritance-in-c/
 
 <details>
 <summary>CPP04:</summary>
+<b>Grade:</b> ?/100
+<b>Subject: </b>
+<a href="./extras/en.subject_CPP04.pdf" target="_blank">CPP04 en_subject</a>
+
+#Useful links:
+https://www.geeksforgeeks.org/how-to-initialize-array-of-objects-with-parameterized-constructors-in-c/
 </details>
 
 <details>
