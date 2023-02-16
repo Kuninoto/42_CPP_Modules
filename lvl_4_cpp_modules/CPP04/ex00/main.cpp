@@ -41,5 +41,11 @@ int	main(void)
 
 	cout << endl;
 
+	delete dog;
+	delete cat;
+	delete meta_animal;
+	delete wrong_cat;
+	delete meta_wrong_animal;
+
 	return EXIT_SUCCESS;
 }

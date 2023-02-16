@@ -9,7 +9,7 @@ WrongCat::WrongCat(void) : WrongAnimal() {
 	this->setType("WrongCat");
 }
 
-WrongCat::WrongCat(const WrongCat &to_copy) 
+WrongCat::WrongCat(const WrongCat &to_copy) : WrongAnimal(to_copy)
 {
 	this->type = to_copy.type;
 	cout << "[WrongCat] copy constructor has been called " << endl;

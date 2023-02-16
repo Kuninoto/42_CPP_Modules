@@ -36,9 +36,9 @@ int main(void)
 	for (size_t i = 0; i < NBR_ANIMALS; i += 1) {
 		delete zoo[i];
 	}
+	cout << "--------------- ZOO DELETED ---------------" << endl;
 	cout << endl;
 
-	cout << "--------------- ZOO DELETED ---------------" << endl;
 	delete Bisteca;
 	delete Junim;
 
