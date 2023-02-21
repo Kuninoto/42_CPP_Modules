@@ -76,6 +76,13 @@ https://www.geeksforgeeks.org/how-to-initialize-array-of-objects-with-parameteri
 
 <details>
 <summary>CPP05:</summary>
+<b>Grade:</b> ?/100
+<b>Subject: </b>
+<a href="./extras/en.subject_CPP05.pdf" target="_blank">CPP05 en_subject</a>
+
+#Useful links:  
+https://www.geeksforgeeks.org/exception-handling-c/
+https://www.udacity.com/blog/2021/07/cpp-try-and-catch-statements-explained.html
 </details>
 
 <details>
