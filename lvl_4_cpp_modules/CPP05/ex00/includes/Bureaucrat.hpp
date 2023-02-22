@@ -12,6 +12,7 @@ using std::string;
 class Bureaucrat {
 	public:
 		Bureaucrat(void);
+		Bureaucrat(const Bureaucrat& to_copy);
 		Bureaucrat(string name, int grade);
 		Bureaucrat &operator=(const Bureaucrat &original);
 		~Bureaucrat(void);

@@ -42,7 +42,7 @@ int main(void)
 		try
 		{
 			// grade too high
-			Bureaucrat	b("B", -1);
+			Bureaucrat	b("B", HIGHEST_GRADE - 1);
 			cout << b << endl;
 		}
 		catch (std::exception& e) {

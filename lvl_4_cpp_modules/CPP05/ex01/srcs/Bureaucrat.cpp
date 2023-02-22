@@ -71,6 +71,15 @@ void Bureaucrat::decrementGrade(void)
 		this->grade += 1;
 }
 
+void Bureaucrat::signForm(string form_name, bool is_signed)
+{
+	if (is_signed)
+		cout << this->getName() << " signed " << form_name << endl;
+	else
+		cout << this->getName() << " couldn't sign " << form_name
+			 << " because the grade was too low and was nervoxhinhu 🥺" << endl;
+}
+
 const char*	Bureaucrat::GradeTooHighException::what() const throw() {
 	return "Bureaucrat exception: grade too high!";
 }
