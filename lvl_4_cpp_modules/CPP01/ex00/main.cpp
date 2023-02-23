@@ -14,12 +14,24 @@ int main(void)
     /* STACK */
     cout << "Name a Zombie 🧟‍♂️: ";
     getline(cin, input);
+    if (cin.eof() == true)
+    {
+        cin.clear();
+        clearerr(stdin);
+		cout << endl;
+    }
     
     randomChump(input);
 
     /* HEAP ZOMBIE */
     cout << "Name a Zombie 🧟‍♂️: ";
     getline(cin, input);
+    if (cin.eof() == true)
+    {
+        cin.clear();
+        clearerr(stdin);
+	    cout << endl;
+    }
 
     Zombie *new_zombie = newZombie(input);
     /* Upon main() exit, if new_zombie is not deleted
