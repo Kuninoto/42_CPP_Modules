@@ -7,10 +7,14 @@ using std::endl;
 
 int main(void)
 {
+	// DEFAULT CONSTRUCTOR
 	Fixed a;
+	// COPY CONSTRUCTOR
 	Fixed b(a);
+	// DEFAULT CONSTRUCTOR
 	Fixed c;
 
+	// COPY ASSIGNMENT OPERATOR OVERLOAD
 	c = b;
 
 	cout << a.getRawBits() << endl;
