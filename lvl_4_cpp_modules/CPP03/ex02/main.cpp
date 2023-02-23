@@ -34,7 +34,13 @@ int main(void)
 
 	Albert.beRepaired(100);
 
+	cout << endl;
+
 	Albert.highFivesGuys();
+
+	cout << endl;
+
+	Albert.takeDamage(100);
 
 	return EXIT_SUCCESS;
 }
