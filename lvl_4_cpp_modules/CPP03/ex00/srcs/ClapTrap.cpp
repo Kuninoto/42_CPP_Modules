@@ -6,7 +6,7 @@ using std::endl;
 
 ClapTrap::ClapTrap(string name)
 : name(name), hit_points(10), energy_points(10), attack_damage(0) {
-	cout << "Default constructor has been called!" << endl;
+	cout << "Default constructor <" << name << "> has been called!" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &to_copy)
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(const ClapTrap &to_copy)
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &original)
 {
-	if (*this != original)
+	if (this != &original)
 	{
 		this->name = original.name;
 		this->hit_points = original.hit_points;

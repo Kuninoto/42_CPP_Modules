@@ -6,7 +6,7 @@ using std::endl;
 
 ClapTrap::ClapTrap(string name)
 : name(name), hit_points(10), energy_points(10), attack_damage(0) {
-	cout << "Super Class (ClapTrap) constructor has been called!" << endl;
+	cout << "Super Class (ClapTrap) <" << name << "> constructor has been called!" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &to_copy)
