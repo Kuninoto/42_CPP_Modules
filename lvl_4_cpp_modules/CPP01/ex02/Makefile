@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 RM = rm -rf
 
 NAME = ex02 
@@ -28,6 +28,7 @@ fclean: clean
 re: fclean all
 
 run: all clean
+	./$(NAME)
 
 .PHONY: all clean fclean re run
 

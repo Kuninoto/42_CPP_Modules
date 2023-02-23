@@ -16,6 +16,12 @@ int main(void)
     {
         cout << "Name the Zombies 🧟‍♂️: ";
         getline(cin, zombies_name);
+        if (cin.eof() == true)
+        {
+            cin.clear();
+            clearerr(stdin);
+			cout << endl;
+        }
         if (!zombies_name.empty())
             break;
         cout << "Please insert a name for the zombies" << endl;
