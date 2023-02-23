@@ -1,10 +1,10 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address #-DLOGS
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -O3 -Wshadow -Wno-shadow -fsanitize=address
 INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
-GENERAL = Fixed
+GENERAL = Bureaucrat AForm ShrubberyCreationForm RobotomyRequestForm PresidentialPardonForm
 
 NAME = ex02
 SRCS = $(addsuffix .cpp, $(GENERAL))\
@@ -32,8 +32,13 @@ fclean: clean
 
 re: fclean all
 
-run: all clean
+run: re clean
+	echo ""
 	./$(NAME)
+
+leaks: re clean
+	echo ""
+	valgrind --leak-check=full -s ./$(NAME)
 
 .PHONY: all clean fclean re run
 
