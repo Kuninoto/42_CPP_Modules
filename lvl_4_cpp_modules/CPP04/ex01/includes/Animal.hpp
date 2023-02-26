@@ -16,7 +16,7 @@ class Animal {
 		string getType(void) const;
 		void setType(string type);
 
-		void makeSound(void) const;
+		virtual void makeSound(void) const;
 
 	protected:
 		string type;
