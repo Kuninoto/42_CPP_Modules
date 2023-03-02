@@ -4,18 +4,14 @@
 using std::cout;
 using std::endl;
 
-Dog::Dog(void) : Animal() {
+Dog::Dog(void) : AAnimal() {
 	cout << "[Dog] default constructor has been called" << endl;
 	this->setType("Dog");
-	try {
-		this->brain = new Brain();
-	}
-	catch (const std::bad_alloc& e) {
-		cout << "[Dog] Brain memory allocation failed: " << e.what() << endl;
-	}
+	this->brain = new Brain();
+
 }
 
-Dog::Dog(const Dog &to_copy) : Animal(to_copy)
+Dog::Dog(const Dog &to_copy) : AAnimal(to_copy)
 {
 	this->type = to_copy.type;
 	this->brain = new Brain();

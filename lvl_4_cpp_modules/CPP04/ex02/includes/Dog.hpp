@@ -1,9 +1,9 @@
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class Dog : public Animal {
+class Dog : public AAnimal {
 	public:
 		Dog(void);
 		Dog(const Dog &to_copy);
