@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl;
 
-Cat::Cat(void) : Animal() {
+Cat::Cat(void) : AAnimal() {
 	cout << "[Cat] default constructor has been called" << endl;
 	this->setType("Cat");
 	try {
@@ -15,7 +15,7 @@ Cat::Cat(void) : Animal() {
 	}
 }
 
-Cat::Cat(const Cat &to_copy) : Animal(to_copy)
+Cat::Cat(const Cat &to_copy) : AAnimal(to_copy)
 {
 	this->type = to_copy.type;
 	this->brain = new Brain();

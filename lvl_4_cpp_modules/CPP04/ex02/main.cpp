@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include <cstdlib>
@@ -11,14 +11,16 @@ using std::endl;
 
 int main(void)
 {
-	const Animal* Bisteca = new Dog();
+//	AAnimal	test = new AAnimal();
+
+	const AAnimal* Bisteca = new Dog();
 	cout << endl;
 
-	const Animal* Junim = new Cat();
+	const AAnimal* Junim = new Cat();
 	cout << endl;
 
 	cout << "------------------- ZOO -------------------" << endl;
-	const Animal* zoo[NBR_ANIMALS];
+	const AAnimal* zoo[NBR_ANIMALS];
 
 	cout << "------------------- DOGS -------------------" << endl;
 	for (size_t i = 0; i < 2; i += 1) {
