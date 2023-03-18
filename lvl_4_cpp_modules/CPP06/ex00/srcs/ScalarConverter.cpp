@@ -1,30 +1,46 @@
+#include <iostream>
+#include <limits>
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter() {
-    #ifdef LOGS
-        cout << "[ScalarConverter] Default constructor has been called" << endl;
-    #endif
-}
-
-ScalarConverter::ScalarConverter(const ScalarConverter &to_copy)
-{
-}
-
-ScalarConverter::~ScalarConverter()
-{
-    #ifdef LOGS
-        cout << "[ScalarConverter] Default destructor has been called" << endl;
-    #endif
-}
-
-ScalarConverter& ScalarConverter::operator=(const ScalarConverter &original)
-{
-    return *this;
-}
-
+using std::cout;
+using std::endl;
 
 void ScalarConverter::convert(string literal)
 {
-    // if (literal == int)
-    //      atoi();
+    cout << "char: " << as_char(literal) << endl;
+    cout << "int: " << as_int(literal) << endl;
+    cout << "float: " << as_float(literal) << endl;
+    cout << "double: " << as_double(literal) << endl;
+}
+
+/* string ScalarConverter::as_char(string& literal)
+{
+    try {
+        return (static_cast<char>(literal));
+    }
+    catch (const std::exception& e) {
+        return ("Impossible");
+    }
+} */
+
+string ScalarConverter::as_int(string& literal)
+{
+    try {
+        double n = std::stoi(literal);
+        return (literal);
+    }
+    catch (const std::exception& e) {
+        return ("Impossible");
+    }
+}
+
+string ScalarConverter::as_double(string& literal)
+{
+    try {
+        double n = std::stod(literal);
+        return (literal);
+    }
+    catch (const std::exception& e) {
+        return ("Impossible");
+    }
 }
