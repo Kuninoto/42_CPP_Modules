@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -O3 -fsanitize=address #-DLOGS
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address #-DLOGS
 INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
@@ -33,8 +33,15 @@ fclean: clean
 re: fclean all
 
 run: all clean
-	echo ""
-	./$(NAME)
+	@echo ""
+	@echo "TEST 1"
+	./$(NAME) 0
+	@echo ""
+	@echo "TEST 2"
+	./$(NAME) nan
+	@echo ""
+	@echo "TEST 3"
+	./$(NAME) 42.0f
 
 noleaks: re clean
 	echo ""
