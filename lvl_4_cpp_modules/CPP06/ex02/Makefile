@@ -1,12 +1,12 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address #-DLOGS
+CFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address
 INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
-GENERAL = Serialization
+GENERAL = Base functions
 
-NAME = serializer
+NAME = realtype
 SRCS = $(addsuffix .cpp, $(GENERAL))\
 	   main.cpp
 
