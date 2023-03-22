@@ -4,9 +4,9 @@ INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
-GENERAL =
+GENERAL = ScalarConverter
 
-NAME = ex00
+NAME = convert
 SRCS = $(addsuffix .cpp, $(GENERAL))\
 	   main.cpp
 
