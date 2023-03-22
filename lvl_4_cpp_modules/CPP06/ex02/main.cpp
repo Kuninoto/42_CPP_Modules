@@ -1,40 +1,31 @@
 #include <iostream>
 #include <cstdlib>
-#include "Serialization.hpp"
+#include "Base.hpp"
 
 using std::cout;
 using std::cerr;
 using std::endl;
 
+Base *generate(void);
+void identify(Base *p);
+void identify(Base &p);
+
 int	main(int argc, char **argv)
 {
     if (argc > 1 && argv)
     {
-        cerr << "serializer: error: command-line arguments aren't supported" << endl;
+        cerr << "realtype: error: command-line arguments aren't supported" << endl;
         return EXIT_FAILURE;
     }
-
-    Data foo;
-    uintptr_t reinterpreted;
-
-    foo.dummy_str = string("test");
-    reinterpreted = Serialization::serialize(&foo);
-
-    cout << "OG foo (Data) Address = " << &foo << endl
-         << "dummy_str value = " << foo.dummy_str << endl;
+    Base *c;
+    
+    cout << "TEST 1" << endl;
+    c = generate();
 
     cout << endl;
+    identify(c);
+    identify(*c);
 
-    cout << "Reinterpreted foo value = " << reinterpreted << endl;
-
-    cout << endl;
-
-    Data *deserialized;
-
-    deserialized = Serialization::deserialize(reinterpreted);
-
-    cout << "Deserialized Address = " << deserialized << endl
-         << "dummy_str value = " << deserialized->dummy_str << endl;
-
+    delete c;
     return EXIT_SUCCESS;
 }
