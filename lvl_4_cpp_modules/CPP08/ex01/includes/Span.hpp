@@ -2,10 +2,8 @@
 # define SPAN_HPP
 
 # include <stdint.h>
-# include <string>
 # include <exception>
 # include <vector>
-# include <algorithm>
 
 class Span {
 	public:
@@ -15,8 +13,11 @@ class Span {
 		~Span(void);
 
 		void addNumber(int nbr);
+		void addRandomNumbers(uint32_t quantity);
 		int shortestSpan(void);
 		int longestSpan(void);
+
+		void printStorage(void);
 
 		class NotEnoughElementsException : public std::exception {
 			public:

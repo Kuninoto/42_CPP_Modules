@@ -1,7 +1,11 @@
-#include "Span.hpp"
 #include <exception>
 #include <stdexcept>
 #include <algorithm>
+#include <iostream>
+#include "Span.hpp"
+
+using std::cout;
+using std::endl;
 
 Span::Span(uint32_t N) : max_size(N), storage(0) {};
 
@@ -26,6 +30,18 @@ void Span::addNumber(int nbr)
 	if (this->storage.size() == this->max_size)
 		throw Span::BeyondMaxSize();
 	this->storage.push_back(nbr);
+}
+
+void Span::addRandomNumbers(uint32_t quantity)
+{
+	srand(time(NULL));
+	try {
+		for (uint32_t i = 0; i < quantity; i += 1)
+			this->addNumber(rand());
+	}
+	catch (std::exception& e) {
+		cout << e.what() << endl;
+	}
 }
 
 int Span::shortestSpan(void)
@@ -60,6 +76,17 @@ int Span::longestSpan(void)
 	int max = *std::max_element(v.begin(), v.end());
 
 	return abs(max - min);
+}
+
+void Span::printStorage(void)
+{
+	std::vector<int> v = this->storage;
+	std::vector<int>::iterator i;
+
+	cout << "storage = ";
+	for (i = v.begin(); i != v.end(); i += 1)
+		cout << *i << " ";
+	cout << endl;
 }
 
 char const* Span::BeyondMaxSize::what(void) const throw() {

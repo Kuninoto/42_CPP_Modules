@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <cstdlib>
 #include "Span.hpp"
 
 using std::cout;
@@ -18,6 +18,7 @@ int main(int argc, char **argv)
 	sp.addNumber(17);
 	sp.addNumber(9);
 	sp.addNumber(11);
+	sp.printStorage();
 	cout << sp.shortestSpan() << endl;
 	cout << sp.longestSpan() << endl;
 
@@ -41,5 +42,12 @@ int main(int argc, char **argv)
 	// 	cerr << e.what() << '\n';
 	// }
 
+
+	Span sp2 = Span(5);
+
+	sp2.addRandomNumbers(5);
+	sp2.printStorage();
+	cout << sp2.shortestSpan() << endl;
+	cout << sp2.longestSpan() << endl;
 	return EXIT_SUCCESS;
 }
