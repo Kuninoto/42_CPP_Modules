@@ -6,10 +6,9 @@
 class ShrubberyCreationForm : AForm {
 	public:
 		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(const);
+		ShrubberyCreationForm(const ShrubberyCreationForm& to_copy);
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &original);
 		~ShrubberyCreationForm(void);
-
 
 	private:
 		const int grade_to_sign;

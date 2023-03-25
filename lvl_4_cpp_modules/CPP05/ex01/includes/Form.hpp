@@ -13,6 +13,7 @@ using std::string;
 class Form {
 	public:
 		Form(void);
+        Form(const Form& to_copy);
 		Form(string name, int grade_to_sign, int grade_to_execute);
 		Form &operator=(const Form &original);
 		~Form(void);
