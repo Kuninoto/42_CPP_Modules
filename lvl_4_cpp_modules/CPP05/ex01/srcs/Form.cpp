@@ -9,6 +9,12 @@ Form::Form(void)
 	cout << "[Form] default constructor has been called" << endl;
 }
 
+Form::Form(const Form& to_copy)
+: name(to_copy.name), is_signed(to_copy.is_signed),
+grade_to_sign(to_copy.grade_to_sign), grade_to_execute(to_copy.grade_to_execute) {
+	cout << "[Form] <" << this->getName() << "> copy constructor called" << endl;
+}
+
 Form::Form(string name, int grade_to_sign, int grade_to_execute) 
 : name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
 {
