@@ -1,7 +1,6 @@
 #include <cstdlib>
 #include <stack>
-#include <sstream>
-#include <string>
+#include <iostream>
 #include "RPN.hpp"
 
 using std::cout;
