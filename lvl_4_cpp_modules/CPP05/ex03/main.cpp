@@ -20,13 +20,19 @@ int main(int argc, char **argv)
 	AForm *b;
 	AForm *c;
 
+	cout << endl;
+
 	Intern Arnaldo;
 
 	a = Arnaldo.makeForm("robotomy request", "Ebil");
+	cout << endl;
 	b = Arnaldo.makeForm("presidential pardon", "Ebil");
+	cout << endl;
 	c = Arnaldo.makeForm("shrubbery creation", "Ebil");
+	cout << endl;
 
 	Arnaldo.makeForm("foo", "Ebil");
+	cout << endl;
 
 	delete a;
 	delete b;
