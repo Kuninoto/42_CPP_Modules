@@ -54,6 +54,7 @@ AForm *Intern::makeForm(std::string name, std::string target)
         else
             delete forms[i];
     }
-    cout << "Intern couldn't create " << name << " form" << endl;
+    if (choosen_form == NULL)
+        cout << "Intern couldn't create " << name << " form" << endl;
     return choosen_form;
 }
