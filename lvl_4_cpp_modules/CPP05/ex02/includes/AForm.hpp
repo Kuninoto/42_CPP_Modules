@@ -5,24 +5,26 @@
 # include <string>
 # include "Bureaucrat.hpp"
 
-using std::string;
-
 # define HIGHEST_GRADE 1
 # define LOWEST_GRADE 150
 
 class AForm {
 	public:
 		AForm(void);
-		AForm(string name, int grade_to_sign, int grade_to_execute);
-		virtual AForm &operator=(const AForm &original);
+		AForm(std::string name, std::string target, int grade_to_sign, int grade_to_execute);
+		AForm(AForm& to_copy);
+		AForm &operator=(AForm& original);
 		virtual ~AForm(void);
 
-		virtual const string getName(void);
-		virtual bool getSignState(void);
-		virtual int getGradeToSign(void);
-		virtual int getGradeToExecute(void);
+		const std::string getName(void);
+		const std::string getTarget(void);
+		bool getSignState(void);
+		int getGradeToSign(void);
+		int getGradeToExecute(void);
 
-		virtual void beSigned(Bureaucrat &bureaucrat);
+		void beSigned(Bureaucrat &bureaucrat);
+
+		virtual void executeAction(Bureaucrat const& executor) const = 0;
 
 		class GradeTooHighException : public std::exception
 		{
@@ -36,12 +38,13 @@ class AForm {
 		};
 
 	private:
-		const string name;
+		const std::string name;
+		const std::string target;
 		bool is_signed;
 		const int grade_to_sign;
 		const int grade_to_execute;
 };
 
-std::ostream &operator<<(std::ostream &stream, AForm &form);
+std::ostream &operator<<(std::ostream &stream, AForm &forM);
 
 #endif // AFORM_HPP

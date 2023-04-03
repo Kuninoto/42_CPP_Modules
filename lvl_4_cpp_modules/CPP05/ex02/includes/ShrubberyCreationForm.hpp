@@ -3,12 +3,14 @@
 
 # include "AForm.hpp"
 
-class ShrubberyCreationForm : AForm {
+class ShrubberyCreationForm : public AForm {
 	public:
 		ShrubberyCreationForm(void);
 		ShrubberyCreationForm(const ShrubberyCreationForm& to_copy);
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &original);
 		~ShrubberyCreationForm(void);
+
+		void executeAction(Bureaucrat const& executor) const;
 
 	private:
 		const int grade_to_sign;
