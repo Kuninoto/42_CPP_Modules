@@ -3,8 +3,19 @@
 
 # include "AForm.hpp"
 
-class PresidentialPardonForm : AForm {
+class PresidentialPardonForm : public AForm 
+{
+	public:
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(const PresidentialPardonForm &copy);
+		~PresidentialPardonForm(void);
 
+		PresidentialPardonForm & operator=(const PresidentialPardonForm &assign);
+
+		void executeAction(Bureaucrat const& executor) const;
+
+	private:
+		PresidentialPardonForm(void);
 };
 
 #endif // PRESIDENTIALPARDONFORM_HPP

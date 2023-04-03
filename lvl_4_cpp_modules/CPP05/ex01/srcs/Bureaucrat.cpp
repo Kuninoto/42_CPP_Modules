@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& to_copy)
 	cout << "[Bureaucrat] <" << this->getName() << "> copy constructor called" << endl;
 }
 
-Bureaucrat::Bureaucrat(string name, int grade) : name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
 	if (grade < HIGHEST_GRADE)
 		throw(Bureaucrat::GradeTooHighException());
@@ -38,7 +38,7 @@ Bureaucrat::~Bureaucrat(void) {
 	cout << "[Bureaucrat] <" << this->getName() << "> default destructor has been called" << endl;
 };
 
-string const Bureaucrat::getName(void) {
+const std::string Bureaucrat::getName(void) {
 	return this->name;
 }
 
@@ -71,7 +71,7 @@ void Bureaucrat::decrementGrade(void)
 		this->grade += 1;
 }
 
-void Bureaucrat::signForm(string form_name, bool is_signed)
+void Bureaucrat::signForm(std::string form_name, bool is_signed)
 {
 	if (is_signed)
 		cout << this->getName() << " signed " << form_name << endl;
@@ -91,5 +91,5 @@ const char*	Bureaucrat::GradeTooLowException::what() const throw() {
 std::ostream &operator<<(std::ostream &stream, Bureaucrat &Bureaucrat)
 {
 	stream << Bureaucrat.getName() << ", bureaucrat grade " << Bureaucrat.getGrade();
-	return (stream);
+	return stream;
 }

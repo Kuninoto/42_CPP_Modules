@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 
 Form::Form(void)
-: name("DEFAULT"), grade_to_sign(1), grade_to_execute(1) {
+: name("DEFAULT"), is_signed(false), grade_to_sign(1), grade_to_execute(1) {
 	cout << "[Form] default constructor has been called" << endl;
 }
 
@@ -15,15 +15,15 @@ grade_to_sign(to_copy.grade_to_sign), grade_to_execute(to_copy.grade_to_execute)
 	cout << "[Form] <" << this->getName() << "> copy constructor called" << endl;
 }
 
-Form::Form(string name, int grade_to_sign, int grade_to_execute) 
+Form::Form(std::string name, int grade_to_sign, int grade_to_execute) 
 : name(name), grade_to_sign(grade_to_sign), grade_to_execute(grade_to_execute)
 {
 	if (grade_to_sign > LOWEST_GRADE
 	|| grade_to_execute > LOWEST_GRADE)
-		throw(Form::GradeTooLowException());
+		throw (Form::GradeTooLowException());
 	else if (grade_to_sign < HIGHEST_GRADE
 	|| grade_to_execute < HIGHEST_GRADE)
-		throw(Form::GradeTooHighException());
+		throw (Form::GradeTooHighException());
 	this->is_signed = false;
 	cout << "[Form] <" << this->getName() << "> constructor has been called" << endl;
 }
@@ -32,7 +32,7 @@ Form::~Form(void) {
 	cout << "[Form] <" << this->getName() << "> default destructor has been called" << endl;
 }
 
-const string Form::getName(void) {
+const std::string Form::getName(void) {
 	return this->name;
 }
 
@@ -58,7 +58,7 @@ void Form::beSigned(Bureaucrat &bureaucrat)
 	else
 	{
 		bureaucrat.signForm(this->getName(), this->is_signed);
-		throw(Form::GradeTooLowException());
+		throw (Form::GradeTooLowException());
 	}
 
 }
@@ -78,5 +78,5 @@ std::ostream &operator<<(std::ostream &stream, Form &form)
 		   << "Grade to sign: " << form.getGradeToSign() << "\n"
 		   << "Grade to execute: " << form.getGradeToExecute() << "\n" 
 		   << endl;
-	return (stream);
+	return stream;
 }
