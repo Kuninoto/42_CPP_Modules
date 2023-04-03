@@ -58,8 +58,8 @@ int Span::shortestSpan(void)
 	std::vector<int>::iterator i;
 	for (i = v.begin(); i != v.end() - 1; i += 1)
 	{
-		if (*(i + 1) - *i < shortest_gap)
-			shortest_gap = *(i + 1) - *i; 
+		if (abs(*(i + 1) - *i) < shortest_gap)
+			shortest_gap = abs(*(i + 1) - *i); 
 	}
 	return shortest_gap;
 }
@@ -68,9 +68,8 @@ int Span::longestSpan(void)
 {
 	std::vector<int> v = this->storage;
 
-	if (v.size() < 2) {
+	if (v.size() < 2)
 		throw Span::NotEnoughElementsException();
-	}
 
 	int min = *std::min_element(v.begin(), v.end());
 	int max = *std::max_element(v.begin(), v.end());
