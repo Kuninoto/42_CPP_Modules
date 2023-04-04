@@ -11,7 +11,7 @@ using std::string;
 #include <iostream>
 #include <Array.hpp>
 
-#define MAX_VAL 750
+/* #define MAX_VAL 750
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -54,9 +54,8 @@ int main(int, char**)
     }
     delete[] mirror;//
     return EXIT_SUCCESS;
-}
+} */
 
-/* 
 int main(int argc, char **argv)
 {
 	(void)argc;
@@ -64,11 +63,11 @@ int main(int argc, char **argv)
 	Array<int>	a(3);
 	Array<int>	b(3);
 
-	for (uint32_t i = 0; i < a.size(); i += 1) {
+	for (size_t i = 0; i < a.size(); i += 1) {
 		cout << "a[" << i << "] = " << a[i] << endl;
 	}
 	cout << endl;
-	for (uint32_t i = 0; i < b.size(); i += 1) {
+	for (size_t i = 0; i < b.size(); i += 1) {
 		cout << "b[" << i << "] = " << b[i] << endl;
 	}
 	a[0] = 1;
@@ -76,27 +75,35 @@ int main(int argc, char **argv)
 	a[2] = 1;
 	cout << endl;
 	cout << "AFTER FILLING A WITH 1's" << endl;
-	for (uint32_t i = 0; i < a.size(); i += 1) {
+	for (size_t i = 0; i < a.size(); i += 1) {
 		cout << "a[" << i << "] = " << a[i] << endl;
 	}
 	cout << endl;
-	for (uint32_t i = 0; i < b.size(); i += 1) {
+	for (size_t i = 0; i < b.size(); i += 1) {
 		cout << "b[" << i << "] = " << b[i] << endl;
 	}
 	b = a;
 
 	cout << "AFTER B = A" << endl;
-	for (uint32_t i = 0; i < a.size(); i += 1) {
+	for (size_t i = 0; i < a.size(); i += 1) {
 		cout << "a[" << i << "] = " << a[i] << endl;
 	}
 	cout << endl;
-	for (uint32_t i = 0; i < b.size(); i += 1) {
+	for (size_t i = 0; i < b.size(); i += 1) {
 		cout << "b[" << i << "] = " << b[i] << endl;
 	}
 
+
+    // Empty Array
+    Array<int> empty;
+
 	// OUT OF BOUNDS EXCEPTION
-	// cout << a[a.size() + 1] << endl;
+    try {
+        cout << a[a.size() + 1] << endl;
+    }
+    catch (std::exception& e) {
+        cerr << e.what() << endl;
+    }
 
 	return EXIT_SUCCESS;
 }
-*/
