@@ -16,12 +16,10 @@ int main (int argc, char **argv)
 	(void)argc;
 	(void)argv;
 
-	//Bureaucrat hermano("Hermano", 150);
+	Bureaucrat hermano("Hermano", LOWEST_GRADE);
 
-	Bureaucrat ebil("Ebil", 1);
+	Bureaucrat ebil("Ebil", HIGHEST_GRADE);
 	cout << endl;
-
-	// AForm aform("a", "b", 0, 0);
 
 	cout << endl;
 	ShrubberyCreationForm scf("Ebil");
@@ -32,6 +30,27 @@ int main (int argc, char **argv)
 	ebil.executeForm(scf);
 	scf.beSigned(ebil);
 	ebil.executeForm(scf);
+
+	cout << endl;
+
+	ebil.executeForm(ppf);
+	ppf.beSigned(ebil);
+	ebil.executeForm(ppf);
+
+	cout << endl;
+
+	ebil.executeForm(rrf);
+	rrf.beSigned(ebil);
+	ebil.executeForm(rrf);
+
+	cout << endl;
+
+	try {
+		hermano.executeForm(scf);
+	}
+	catch (std::exception& e) {
+		cerr << e.what() << endl;
+	}
 
 	cout << endl;
 	return EXIT_SUCCESS;

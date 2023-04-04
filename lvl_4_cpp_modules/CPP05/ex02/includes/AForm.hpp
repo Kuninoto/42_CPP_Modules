@@ -17,14 +17,14 @@ class AForm {
 		AForm &operator=(AForm& original);
 		virtual ~AForm(void);
 
-		std::string getName(void) const;
-		std::string getTarget(void) const;
-		bool getSignState(void);
+		const std::string& getName(void) const;
+		const std::string& getTarget(void) const;
+		bool getSignState(void) const;
 		int getGradeToSign(void) const;
 		int getGradeToExecute(void) const;
 
 		void beSigned(Bureaucrat &bureaucrat);
-		virtual void execute(Bureaucrat& executor) = 0;
+		void execute(Bureaucrat const& executor) const;
 
 		class GradeTooHighException : public std::exception
 		{
@@ -43,6 +43,8 @@ class AForm {
 		bool is_signed;
 		const int grade_to_sign;
 		const int grade_to_execute;
+		AForm(void);
+		virtual void executeSuperClassForm(Bureaucrat const& executor) const = 0;
 };
 
 std::ostream &operator<<(std::ostream &stream, AForm &forM);

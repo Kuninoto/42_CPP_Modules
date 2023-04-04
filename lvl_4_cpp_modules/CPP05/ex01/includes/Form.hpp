@@ -10,16 +10,15 @@
 
 class Form {
 	public:
-		Form(void);
-        Form(const Form& to_copy);
+		Form(const Form& to_copy);
 		Form(std::string name, int grade_to_sign, int grade_to_execute);
 		Form &operator=(const Form &original);
 		~Form(void);
 
-		const std::string getName(void);
-		bool getSignState(void);
-		int getGradeToSign(void);
-		int getGradeToExecute(void);
+		const std::string& getName(void) const;
+		bool getSignState(void) const;
+		int getGradeToSign(void) const;
+		int getGradeToExecute(void) const;
 
 		void beSigned(Bureaucrat &bureaucrat);
 
@@ -39,6 +38,7 @@ class Form {
 		bool is_signed;
 		const int grade_to_sign;
 		const int grade_to_execute;
+		Form(void);
 };
 
 std::ostream &operator<<(std::ostream &stream, Form &Form);

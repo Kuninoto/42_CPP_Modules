@@ -5,56 +5,75 @@
 #include "RobotomyRequestForm.hpp"
 
 using std::cout;
+using std::cerr;
 using std::endl;
 
 Intern::Intern(void) {
-	cout << "[Intern] Default Constructor called" << endl;
+    #ifdef LOGS
+    	cout << "[Intern] Default Constructor called" << endl;
+    #endif
 }
 
 Intern::Intern(const Intern &copy)
 {
 	*this = copy;
-	cout << "[Intern] Copy Constructor called" << endl;
+    #ifdef LOGS
+	    cout << "[Intern] Copy Constructor called" << endl;
+    #endif
 }
 
 Intern::~Intern() {
-	cout << "[Intern] Destructor called" << endl;
+    #ifdef LOGS
+    	cout << "[Intern] Destructor called" << endl;
+    #endif
 }
 
 Intern& Intern::operator=(const Intern &assign)
 {
+    #ifdef LOGS
+	    cout << "[Intern] Copy Assignment Operator called" << endl;
+    #endif
 	if (this == &assign)
         return *this;
 	return *this;
 }
 
+static AForm *newShrubbery(const std::string target) {
+	return new ShrubberyCreationForm(target);
+}
+
+static AForm *newRobotomy(const std::string target) {
+	return new RobotomyRequestForm(target);
+}
+
+static AForm *newPresidential(const std::string target) {
+	return new PresidentialPardonForm(target);
+}
+
+typedef AForm *(*FormConstructorPtr)(const std::string);
+
 AForm *Intern::makeForm(std::string name, std::string target)
 {
     AForm *choosen_form = NULL;
 
-    std::string form_names[] = {
+    const std::string form_names[] = {
         "robotomy request",
         "presidential pardon",
         "shrubbery creation"
     };
 
-    AForm*    forms[] = {
-        new RobotomyRequestForm(target),
-        new PresidentialPardonForm(target),
-        new ShrubberyCreationForm(target)
-    };
+    FormConstructorPtr form_constructors[3] = {&newShrubbery, &newRobotomy, &newPresidential};
 
     for (size_t i = 0; i < 3; i += 1)
     {
         if (name == form_names[i])
         {
             cout << "Intern creates " << name << endl;
-            choosen_form  = forms[i];
+            choosen_form = form_constructors[i](target);;
+            break ;
         }
-        else
-            delete forms[i];
     }
-    if (choosen_form == NULL)
-        cout << "Intern couldn't create " << name << " form" << endl;
+    if (!choosen_form)
+        cerr << "Intern couldn't create " << name << " form" << endl;
     return choosen_form;
 }

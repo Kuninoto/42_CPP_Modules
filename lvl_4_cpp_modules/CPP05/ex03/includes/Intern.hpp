@@ -4,12 +4,10 @@
 # include <string>
 # include "AForm.hpp"
 
-class Intern
-{
+class Intern {
 	public:
 		Intern(void);
 		Intern(const Intern &to_copy);
-		
 		~Intern(void);
 
 		Intern& operator=(const Intern &assign);
