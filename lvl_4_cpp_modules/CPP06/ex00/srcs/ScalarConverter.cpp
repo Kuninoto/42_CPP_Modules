@@ -59,7 +59,7 @@ bool is_char(string& literal)
 
 bool is_int(string& literal)
 {
-    for (size_t i = literal.find("-", 0) ? 1 : 0; i < literal.length(); i += 1)
+    for (size_t i = literal.at(0) ? 1 : 0; i < literal.length(); i += 1)
     {
         if (!isdigit(literal.at(i)))
             return false;
