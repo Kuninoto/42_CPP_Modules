@@ -71,8 +71,8 @@ template <typename T>
 T&	Array<T>::operator[](uint32_t n) throw(std::exception)
 {
 	if (n >= this->storage_size)
-		throw (Array<T>::OutOfBoundsException());
-	return (this->storage[n]);
+		throw Array<T>::OutOfBoundsException();
+	return this->storage[n];
 }
 
 template <typename T>
