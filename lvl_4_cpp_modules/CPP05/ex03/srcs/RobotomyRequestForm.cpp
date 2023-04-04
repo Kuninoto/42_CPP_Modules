@@ -8,26 +8,36 @@ using std::cerr;
 using std::endl;
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) 
-: AForm("RobotomyRequestForm", target, 72, 45) {};
+: AForm("RobotomyRequestForm", target, 72, 45) {
+	#ifdef LOGS
+		cout << "[RobotomyRequestForm] Parameterized Constructor" << endl;
+	#endif
+};
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &to_copy)
 : AForm(to_copy.getName(), to_copy.getTarget(), to_copy.getGradeToSign(), to_copy.getGradeToExecute()) {
-	cout << "[RobotomyRequestForm] Copy Constructor" << endl;
+	#ifdef LOGS
+		cout << "[RobotomyRequestForm] Copy Constructor" << endl;
+	#endif
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
-	cout << "[RobotomyRequestForm] Destructor called" << endl;
+	#ifdef LOGS
+		cout << "[RobotomyRequestForm] Destructor called" << endl;
+	#endif
 }
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &assign) {
-	cout << "[RobotomyRequestForm] copy assignment operator called"<< endl;
+	#ifdef LOGS
+		cout << "[RobotomyRequestForm] copy assignment operator called"<< endl;
+	#endif
 	if (this == &assign)
 		return *this;
 	return *this;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat &executor) {
-
+void RobotomyRequestForm::executeSuperClassForm(Bureaucrat const& executor) const
+{
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw Bureaucrat::GradeTooLowException();
 	else if (this->getSignState() == false)

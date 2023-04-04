@@ -5,44 +5,54 @@ using std::cerr;
 using std::endl;
 
 Bureaucrat::Bureaucrat(void) {
-	cout << "[Bureaucrat] default constructor has been called" << endl;
+	#ifdef LOGS
+		cout << "[Bureaucrat] default constructor has been called" << endl;
+	#endif
 };
 
 Bureaucrat::Bureaucrat(const Bureaucrat& to_copy)
 {
 	if (this != &to_copy)
 		*this = to_copy;
-	cout << "[Bureaucrat] <" << this->getName() << "> copy constructor called" << endl;
+	#ifdef LOGS
+		cout << "[Bureaucrat] <" << this->getName() << "> copy constructor called" << endl;
+	#endif
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
+	#ifdef LOGS
+		cout << "[Bureaucrat] <" << this->getName() << "> constructor called" << endl;
+	#endif
 	if (grade < HIGHEST_GRADE)
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > LOWEST_GRADE)
 		throw Bureaucrat::GradeTooLowException();
 	else
 		this->grade = grade;
-	cout << "[Bureaucrat] <" << this->getName() << "> constructor called" << endl;
 };
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &original)
 {
 	const_cast<std::string&>(this->name) = original.name;
 	this->grade = original.grade;
-	cout << "[Bureaucrat] <" << this->getName() << "> copy assignment operator called" << endl;
+	#ifdef LOGS
+		cout << "[Bureaucrat] <" << this->getName() << "> copy assignment operator called" << endl;
+	#endif
 	return *this;
 }
 
 Bureaucrat::~Bureaucrat(void) {
-	cout << "[Bureaucrat] <" << this->getName() << "> default destructor has been called" << endl;
+	#ifdef LOGS
+		cout << "[Bureaucrat] <" << this->getName() << "> default destructor has been called" << endl;
+	#endif
 };
 
-std::string const Bureaucrat::getName(void) {
+const std::string& Bureaucrat::getName(void) const {
 	return this->name;
 }
 
-int Bureaucrat::getGrade(void) {
+int Bureaucrat::getGrade(void) const {
 	return this->grade;
 }
 
@@ -77,10 +87,10 @@ void Bureaucrat::signForm(std::string form_name, bool is_signed)
 		cout << this->getName() << " signed " << form_name << endl;
 	else
 		cout << this->getName() << " couldn't sign " << form_name
-			 << " because the grade was too low and was nervoxhinhu 🥺" << endl;
+			 << " because the grade was too low 🥺" << endl;
 }
 
-void Bureaucrat::executeForm(AForm& form) {
+void Bureaucrat::executeForm(AForm const& form) {
 	form.execute(*this);
 }
 

@@ -4,11 +4,6 @@
 using std::cout;
 using std::endl;
 
-Form::Form(void)
-: name("DEFAULT"), is_signed(false), grade_to_sign(1), grade_to_execute(1) {
-	cout << "[Form] default constructor has been called" << endl;
-}
-
 Form::Form(const Form& to_copy)
 : name(to_copy.name), is_signed(to_copy.is_signed),
 grade_to_sign(to_copy.grade_to_sign), grade_to_execute(to_copy.grade_to_execute) {
@@ -32,19 +27,19 @@ Form::~Form(void) {
 	cout << "[Form] <" << this->getName() << "> default destructor has been called" << endl;
 }
 
-const std::string Form::getName(void) {
+const std::string& Form::getName(void) const {
 	return this->name;
 }
 
-bool Form::getSignState(void) {
+bool Form::getSignState(void) const {
 	return this->is_signed;
 }
 
-int Form::getGradeToSign(void) {
+int Form::getGradeToSign(void) const {
 	return this->grade_to_sign;
 }
 
-int Form::getGradeToExecute(void) {
+int Form::getGradeToExecute(void) const {
 	return this->grade_to_execute;
 }
 

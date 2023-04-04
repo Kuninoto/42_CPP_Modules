@@ -6,25 +6,36 @@ using std::cerr;
 using std::endl;
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
-: AForm("PresidentialPardonForm", target, 25, 5) {};
+: AForm("PresidentialPardonForm", target, 25, 5) {
+	#ifdef LOGS
+		cout << "[PresidentialPardonForm] Parameterized Constructor called" << endl;
+	#endif
+};
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy)
 : AForm(copy.getName(), copy.getTarget(), copy.getGradeToSign(), copy.getGradeToExecute()) {
-	cout << "[PresidentialPardonForm] Copy Constructor called" << endl;
+	#ifdef LOGS
+		cout << "[PresidentialPardonForm] Copy Constructor called" << endl;
+	#endif
 	*this = copy;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void) {
-	cout << "[PresidentialPardonForm] Destructor called" << endl;
+	#ifdef LOGS
+		cout << "[PresidentialPardonForm] Destructor called" << endl;
+	#endif
 }
 
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm &assign) {
+	#ifdef LOGS
+		cout << "[PresidentialPardonForm] Copy Assignment Operator called" << endl;
+	#endif
 	if (this == &assign)
 		return *this;
 	return *this;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat &executor)
+void PresidentialPardonForm::executeSuperClassForm(Bureaucrat const& executor) const
 {
 	if (executor.getGrade() > this->getGradeToExecute())
 		throw Bureaucrat::GradeTooLowException();

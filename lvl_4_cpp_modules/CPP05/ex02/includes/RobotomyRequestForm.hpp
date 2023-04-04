@@ -11,7 +11,7 @@ class RobotomyRequestForm : public AForm {
 
 		RobotomyRequestForm& operator=(const RobotomyRequestForm &assign);
 
-		void execute(Bureaucrat& executor);
+		void executeSuperClassForm(Bureaucrat const& executor) const;
 
 		private:
 			RobotomyRequestForm(void);

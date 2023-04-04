@@ -38,19 +38,19 @@ Bureaucrat::~Bureaucrat(void) {
 	cout << "[Bureaucrat] <" << this->getName() << "> default destructor has been called" << endl;
 };
 
-std::string const Bureaucrat::getName(void) {
+const std::string& Bureaucrat::getName(void) const {
 	return this->name;
 }
 
-int Bureaucrat::getGrade(void) {
+int Bureaucrat::getGrade(void) const {
 	return this->grade;
 }
 
 void Bureaucrat::setGrade(int grade) {
 	if (grade > LOWEST_GRADE)
-		throw(Bureaucrat::GradeTooLowException());
+		throw Bureaucrat::GradeTooLowException();
 	else if (grade < HIGHEST_GRADE)
-		throw(Bureaucrat::GradeTooHighException());
+		throw Bureaucrat::GradeTooHighException();
 	else
 		this->grade = grade;
 }

@@ -38,11 +38,11 @@ Bureaucrat::~Bureaucrat(void) {
 	cout << "[Bureaucrat] <" << this->getName() << "> default destructor has been called" << endl;
 };
 
-const std::string Bureaucrat::getName(void) {
+const std::string& Bureaucrat::getName(void) const {
 	return this->name;
 }
 
-int Bureaucrat::getGrade(void) {
+int Bureaucrat::getGrade(void) const {
 	return this->grade;
 }
 

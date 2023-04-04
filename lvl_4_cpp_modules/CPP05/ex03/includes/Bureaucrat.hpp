@@ -16,8 +16,8 @@ class Bureaucrat {
         Bureaucrat &operator=(const Bureaucrat &original);
         ~Bureaucrat(void);
 
-        std::string const getName(void);
-        int getGrade(void);
+        const std::string& getName(void) const;
+        int getGrade(void) const;
 
         void setGrade(int grade);
 
@@ -25,7 +25,7 @@ class Bureaucrat {
         void decrementGrade(void);
         void signForm(std::string form_name, bool was_signed);
 
-        void executeForm(AForm& form);
+        void executeForm(AForm const& form);
 
         class GradeTooHighException : public std::exception
         {
@@ -39,7 +39,7 @@ class Bureaucrat {
         };
 
     private:
-        std::string const name;
+        const std::string name;
         int grade;
 };
 
