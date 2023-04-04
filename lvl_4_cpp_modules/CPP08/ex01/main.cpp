@@ -25,29 +25,29 @@ int main(int argc, char **argv)
 	// EXCEPTIONS
 
 	// Pushing beyond N elements
-	// try {
-	// 	sp.addNumber(42);
-	// }
-	// catch(const std::exception& e) {
-	// 	cerr << e.what() << '\n';
-	// }
+	try {
+		sp.addNumber(42);
+	}
+	catch(const std::exception& e) {
+		cerr << e.what() << '\n';
+	}
 
 	// Trying to get a span with less than 2 elements on the vector
-	// Span sp1 = Span(1);
-	// sp1.addNumber(1);
-	// try {
-	// 	cout << sp1.shortestSpan() << endl;
-	// }
-	// catch(const std::exception& e) {
-	// 	cerr << e.what() << '\n';
-	// }
-
+	Span sp1 = Span(1);
+	sp1.addNumber(1);
+	try {
+		cout << sp1.shortestSpan() << endl;
+	}
+	catch(const std::exception& e) {
+		cerr << e.what() << '\n';
+	}
 
 	Span sp2 = Span(5);
 
 	sp2.addRandomNumbers(5);
+	cout << "sp2 ";
 	sp2.printStorage();
-	cout << sp2.shortestSpan() << endl;
-	cout << sp2.longestSpan() << endl;
+	cout << "sp2.shortestSpan() = " << sp2.shortestSpan() << endl;
+	cout << "sp2.longestSpan() = " << sp2.longestSpan() << endl;
 	return EXIT_SUCCESS;
 }
