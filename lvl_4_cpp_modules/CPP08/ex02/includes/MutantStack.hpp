@@ -36,7 +36,7 @@ template<typename T>
 MutantStack<T>& MutantStack<T>::operator=(MutantStack const& to_copy)
 {
 	std::stack<int>::operator=(to_copy);
-	return (*this);
+	return *this;
 }
 
 template<typename T>

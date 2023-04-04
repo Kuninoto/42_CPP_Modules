@@ -16,9 +16,7 @@ T min(T parameter1, T parameter2)
 {
 	if (parameter1 == parameter2)
 		return parameter2;
-	if (parameter1 > parameter2)
-		return parameter2;
-	return parameter1;
+	return parameter1 > parameter2 ? parameter2 : parameter1;
 }
 
 template <typename T>
@@ -26,9 +24,7 @@ T max(T parameter1, T parameter2)
 {
 	if (parameter1 == parameter2)
 		return parameter2;
-	if (parameter1 > parameter2)
-		return parameter1;
-	return parameter2;
+	return parameter1 > parameter2 ? parameter1 : parameter2;
 }
 
 #endif // WHATEVER_HPP
