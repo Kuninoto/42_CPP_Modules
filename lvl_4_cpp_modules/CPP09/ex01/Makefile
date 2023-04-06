@@ -33,7 +33,18 @@ fclean: clean
 re: fclean all
 
 run: all clean
-	./$(NAME)
+	@echo ""
+	@echo "TEST 1"
+	./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
+	@echo ""
+	@echo "TEST 2"
+	./$(NAME) "7 7 * 7 -"
+	@echo ""
+	@echo "TEST 3"
+	./$(NAME) "1 2 * 2 / 2 * 2 4 - +"
+	@echo ""
+	@echo "TEST 4"
+	./$(NAME) "(1 + 1)"
 
 noleaks: re clean
 	echo ""

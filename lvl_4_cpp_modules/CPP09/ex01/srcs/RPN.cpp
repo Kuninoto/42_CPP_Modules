@@ -1,37 +1,66 @@
-#include <exception>
-#include <stdexcept>
 #include <algorithm>
 #include <iostream>
+#include <sstream>
+#include <string>
 #include "RPN.hpp"
 
 using std::cout;
 using std::endl;
 
-RPN::RPN(void) {};
-
-RPN::RPN(const RPN &to_copy) {
-	if (this != &to_copy)
-		*this = to_copy;
-}
-
-RPN &RPN::operator=(const RPN &to_copy)
+static int ft_stoi(const std::string& str)
 {
-	if (this == &to_copy)
-		return *this;
-	return *this;
+    int num;
+    std::stringstream ss(str);
+
+    ss >> num;
+    return num;
 }
+
+RPN::RPN(void) {};
 
 RPN::~RPN(void) {};
 
-bool RPN::valid_expression(string expr)
+bool RPN::valid_expression(const std::string& expr)
 {
-	string valid_chars("0123456789+-/* ");
+	std::string valid_chars("0123456789+-/* ");
 
 	for (size_t i = 0; i < expr.length(); i += 1) {
-		if (valid_chars.find(expr[i]) == string::npos)
+		if (valid_chars.find(expr[i]) == std::string::npos)
 			return false;
 	}
 	return true;
 }
 
+long long RPN::calculate(const std::string& expr)
+{
+    int left;
+    int right;
+    int answer;
+    std::stringstream postfix(expr);
+    std::stack<int> temp;
+    std::string s;
 
+    while (postfix >> s)
+    {
+        if (s.at(0) == '+' || s.at(0) == '-' || s.at(0) == '/' || s.at(0) == '*')
+        {
+            // Pull out top two elements
+            right = temp.top();
+            temp.pop();
+            left = temp.top();
+            temp.pop();
+            switch (s[0])
+            {
+                case '+': answer =  left + right ; break;
+                case '-': answer =  left - right ; break;
+                case '/': answer =  left * right ; break;
+                case '*': answer =  left / right ; break; // MISSING check if right != 0
+            }
+            temp.push(answer); // push the result of above operation
+        }
+        else
+            temp.push(ft_stoi(s));
+    }
+	// last element is the answer
+	return temp.top();
+}
