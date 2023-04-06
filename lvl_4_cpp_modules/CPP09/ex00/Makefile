@@ -4,10 +4,11 @@ INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
-GENERAL = 
+GENERAL = BitcoinExchange
 
 NAME = btc
-SRCS = main.cpp
+SRCS = $(addsuffix .cpp, $(GENERAL))\
+	   main.cpp
 
 OBJ_DIR = obj
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
@@ -32,7 +33,7 @@ fclean: clean
 re: fclean all
 
 run: all clean
-	./$(NAME)
+	./$(NAME) input.txt
 
 noleaks: re clean
 	echo ""
