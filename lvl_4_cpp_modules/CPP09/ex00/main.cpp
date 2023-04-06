@@ -59,7 +59,6 @@ int main(int argc, char **argv)
         std::string rate_as_str = line.substr(delim + 2, line.length());
 		float rate = ft_stof(rate_as_str);
 
-		// REFACTOR ///////////////////////////////////////////////////////
 		if (rate < 0)
 		{
 			cerr << NOT_A_POSITIVE_ERR << '\n';
