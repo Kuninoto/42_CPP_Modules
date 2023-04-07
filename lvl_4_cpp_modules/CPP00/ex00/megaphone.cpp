@@ -1,11 +1,10 @@
-#include <iostream> // std::string, cout, endl
+#include <iostream> // cout, endl
 #include <cstdlib> // EXIT_* macros
 
-using std::string;
 using std::cout;
 using std::endl;
 
-string string_to_upper(string arg)
+std::string string_to_upper(std::string arg)
 {
     for (size_t i = 0; i < arg.length(); i += 1)
         arg[i] = toupper(arg[i]);

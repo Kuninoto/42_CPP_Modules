@@ -6,10 +6,6 @@
 using std::cout;
 using std::cerr;
 using std::endl;
-using std::string;
-
-#include <iostream>
-#include <Array.hpp>
 
 /* #define MAX_VAL 750
 int main(int, char**)
@@ -64,11 +60,11 @@ int main(int argc, char **argv)
 	Array<int>	b(3);
 
 	for (size_t i = 0; i < a.size(); i += 1) {
-		cout << "a[" << i << "] = " << a[i] << endl;
+		cout << "a[" << i << "] = " << a[i] << "\n";
 	}
 	cout << endl;
 	for (size_t i = 0; i < b.size(); i += 1) {
-		cout << "b[" << i << "] = " << b[i] << endl;
+		cout << "b[" << i << "] = " << b[i] << "\n";
 	}
 	a[0] = 1;
 	a[1] = 1;
@@ -76,21 +72,21 @@ int main(int argc, char **argv)
 	cout << endl;
 	cout << "AFTER FILLING A WITH 1's" << endl;
 	for (size_t i = 0; i < a.size(); i += 1) {
-		cout << "a[" << i << "] = " << a[i] << endl;
+		cout << "a[" << i << "] = " << a[i] << "\n";
 	}
 	cout << endl;
 	for (size_t i = 0; i < b.size(); i += 1) {
-		cout << "b[" << i << "] = " << b[i] << endl;
+		cout << "b[" << i << "] = " << b[i] << "\n";
 	}
 	b = a;
 
 	cout << "AFTER B = A" << endl;
 	for (size_t i = 0; i < a.size(); i += 1) {
-		cout << "a[" << i << "] = " << a[i] << endl;
+		cout << "a[" << i << "] = " << a[i] << "\n";
 	}
 	cout << endl;
 	for (size_t i = 0; i < b.size(); i += 1) {
-		cout << "b[" << i << "] = " << b[i] << endl;
+		cout << "b[" << i << "] = " << b[i] << "\n";
 	}
 
 

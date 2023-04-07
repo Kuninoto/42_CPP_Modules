@@ -3,14 +3,13 @@
 #include <cstdlib>
 #include "PhoneBook.hpp"
 
-using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
 
 // Utils
 
-bool is_onlydigits(string input)
+bool is_onlydigits(std::string input)
 {
 	for (size_t i = 0; i < input.length(); i += 1)
 		if (!isdigit(input[i]))
@@ -18,7 +17,7 @@ bool is_onlydigits(string input)
 	return true;
 }
 
-string get_formatted_field(const string field)
+std::string get_formatted_field(const std::string field)
 {
 	if (field.length() > 10)
 		return field.substr(0,9) + ".";
@@ -37,12 +36,12 @@ void display_contact_info(Contact contact)
 }
 
 // Default constructor
-PhoneBook::PhoneBook() : count(0) {}
+PhoneBook::PhoneBook() : count(0) {};
 
 void PhoneBook::addContact(void)
 {
 	Contact	new_contact;
-	string	input;
+	std::string	input;
 
 	cout << "First name: ";
 	getline(cin, input);
@@ -101,7 +100,7 @@ void PhoneBook::searchContact(void)
 		cout << endl;
 	}
 
-	string index;
+	std::string index;
 	int conv_index;
 
 	while (1)

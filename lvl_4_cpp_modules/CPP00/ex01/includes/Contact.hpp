@@ -1,29 +1,28 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <string>
-using std::string;
+# include <string>
 
 class Contact {
     public:
-        void	setFirstName(string str);
-        void	setLastName(string str);
-        void	setNickName(string str);
-        void	setPhoneNumber(string str);
-        void	setDarkestSecret(string str);
+        void setFirstName(std::string str);
+        void setLastName(std::string str);
+        void setNickName(std::string str);
+        void setPhoneNumber(std::string str);
+        void setDarkestSecret(std::string str);
 
-        string	getFirstName(void);
-        string	getLastName(void);
-        string	getNickname(void);
-        string	getPhoneNumber(void);
-        string	getDarkestSecret(void);
+        std::string	getFirstName(void);
+        std::string	getLastName(void);
+        std::string	getNickname(void);
+        std::string	getPhoneNumber(void);
+        std::string	getDarkestSecret(void);
 
     private:
-        string	first_name;
-        string	last_name;
-        string	nickname;
-        string	phone_number;
-        string	darkest_secret;
+        std::string	first_name;
+        std::string	last_name;
+        std::string	nickname;
+        std::string	phone_number;
+        std::string	darkest_secret;
 };
 
 #endif // CONTACT_HPP

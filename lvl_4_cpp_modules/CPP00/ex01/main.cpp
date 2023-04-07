@@ -1,14 +1,14 @@
-#include <iostream> // std::string, cin, cout, endl
+#include <iostream> // cin, cout, endl
+#include <string> // string class
 #include <cstdlib> // exit() && EXIT_* macros
 #include <stdio.h> // clearerr()
 #include "PhoneBook.hpp"
 
-using std::string;
 using std::cin;
 using std::cout;
 using std::endl;
 
-static inline bool is_input_valid(string input) { return input == "ADD" || input == "SEARCH" || input == "EXIT"; }
+static inline bool is_input_valid(std::string input) { return input == "ADD" || input == "SEARCH" || input == "EXIT"; }
 
 void print_welcome(void)
 {
@@ -25,9 +25,9 @@ void print_welcome(void)
             "*-------------------------------------------*" << endl;
 }
 
-string get_input(void)
+std::string get_input(void)
 {
-    string input;
+    std::string input;
 
     while (1)
     {
@@ -49,7 +49,7 @@ string get_input(void)
 int main(void)
 {
     PhoneBook phone_book;
-    string input;
+    std::string input;
 
     print_welcome();
     while (1)
@@ -62,7 +62,7 @@ int main(void)
         else
         {
             cout << "See ya later aligator! 🦖" << endl;
-            exit(EXIT_SUCCESS);
+            return EXIT_SUCCESS;
         }
     }
     return EXIT_SUCCESS;

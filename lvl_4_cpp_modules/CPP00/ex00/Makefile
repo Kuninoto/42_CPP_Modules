@@ -23,6 +23,7 @@ fclean: clean
 re: fclean all
 
 run: all clean
+	./$(NAME) "test"
 
 .PHONY: all clean fclean re run
 

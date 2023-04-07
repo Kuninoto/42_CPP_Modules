@@ -2,11 +2,10 @@
 # define SCALARCONVERTER_HPP
 
 # include <string>
-using std::string;
 
 class ScalarConverter {
 	public:
-		static void convert(string literal);
+		static void convert(const std::string& literal);
 };
 
 #endif // SCALARCONVERTER_HPP

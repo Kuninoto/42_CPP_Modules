@@ -44,6 +44,9 @@ run: all clean
 	./$(NAME) "1 2 * 2 / 2 * 2 4 - +"
 	@echo ""
 	@echo "TEST 4"
+	./$(NAME) "1 0 /"
+	@echo ""
+	@echo "TEST 5"
 	./$(NAME) "(1 + 1)"
 
 noleaks: re clean

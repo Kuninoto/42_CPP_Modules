@@ -9,7 +9,7 @@ using std::endl;
 
 /* UTILS */
 
-static int ft_stoi(string& str)
+static int ft_stoi(const std::string& str)
 {
     int num;
     std::stringstream ss(str);
@@ -18,7 +18,7 @@ static int ft_stoi(string& str)
     return num;
 }
 
-static float ft_stof(string& str)
+static float ft_stof(const std::string& str)
 {
     float num;
     std::stringstream ss(str);
@@ -27,7 +27,7 @@ static float ft_stof(string& str)
     return num;
 }
 
-static double ft_stod(string& str)
+static double ft_stod(const std::string& str)
 {
     double num;
     std::stringstream ss(str);
@@ -46,7 +46,7 @@ enum literal_type {
     _double,
 };
 
-bool is_char(string& literal)
+static bool is_char(const std::string& literal)
 {
     if (literal.length() != 1)
         return false;
@@ -57,7 +57,7 @@ bool is_char(string& literal)
     return true;
 }
 
-bool is_int(string& literal)
+static bool is_int(const std::string& literal)
 {
     for (size_t i = literal.at(0) ? 1 : 0; i < literal.length(); i += 1)
     {
@@ -67,7 +67,7 @@ bool is_int(string& literal)
     return true;
 }
 
-bool is_float(string& literal)
+static bool is_float(const std::string& literal)
 {
     bool    found_point;
 
@@ -91,7 +91,7 @@ bool is_float(string& literal)
     return true;
 }
 
-bool is_double(string& literal)
+static bool is_double(const std::string& literal)
 {
     bool    found_point;
 
@@ -113,12 +113,12 @@ bool is_double(string& literal)
     return true;
 }
 
-static bool is_pseudo_literal(string& literal) {
+static bool is_pseudo_literal(const std::string& literal) {
     return (literal == "-inff" || literal == "+inff" || literal == "nanf"
          || literal == "-inf" || literal == "+inf" || literal == "nan");
 }
 
-literal_type get_type(string& literal)
+literal_type get_type(const std::string& literal)
 {
     if (is_char(literal))
         return _char;
@@ -150,18 +150,18 @@ void literal_int(int nbr)
     cout << "double: " << static_cast<double>(nbr) << ".0" << endl;
 }
 
-void literal_float(float nbr)
+static void literal_float(float nbr)
 {
     if (isprint(nbr))
         cout << "char: '" << static_cast<char>(nbr)  << "'" << endl;
     else
         cout << "char: Non displayable" << endl;
     cout << "int: " << static_cast<int>(nbr) << endl;
-    cout << "float: " << static_cast<float>(nbr) << ".0f" << endl;
+    cout << "float: " << nbr << ".0f" << endl;
     cout << "double: " << static_cast<double>(nbr) << ".0" << endl;
 }
 
-void literal_double(double nbr)
+static void literal_double(double nbr)
 {
     if (isprint(nbr))
         cout << "char: '" << static_cast<char>(nbr)  << "'" << endl;
@@ -172,7 +172,7 @@ void literal_double(double nbr)
     cout << "double: " << nbr << ".0" << endl;
 }
 
-void pseudo_literal(literal_type dest_type, string pseudo_literal)
+static void pseudo_literal(literal_type dest_type, const std::string& pseudo_literal)
 {
     cout << "char: impossible" << endl;
     cout << "int: impossible" << endl; 
@@ -188,7 +188,7 @@ void pseudo_literal(literal_type dest_type, string pseudo_literal)
     }
 }
 
-void ScalarConverter::convert(string literal)
+void ScalarConverter::convert(const std::string& literal)
 {
     switch (get_type(literal))
     {

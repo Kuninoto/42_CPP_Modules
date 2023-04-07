@@ -7,14 +7,12 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-
 /* Initialize static variables */
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;
 int Account::_totalNbWithdrawals = 0;
-
 
 /* Getters */
 
@@ -55,8 +53,6 @@ Account::Account(int initial_deposit)
     cout << "index:" << this->_accountIndex << ";"
          << "amount:" << this->_amount << ";"
          << "created" << endl;
-
-
     return ;
 }
 

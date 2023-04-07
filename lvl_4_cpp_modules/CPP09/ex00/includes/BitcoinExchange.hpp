@@ -56,11 +56,11 @@ class BitcoinExchange {
         BitcoinExchange(void);
         ~BitcoinExchange(void);
 
-        float getRateFromDataBase(std::string date);
+        float getRateFromDataBase(const std::string& date);
 
     private:
         std::map<std::string, float> dataBase;
-        void readDataBase();
+        void readDataBase(void);
 };
 
 #endif // BITCOINEXCHANGE_HPP
