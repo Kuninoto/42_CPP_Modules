@@ -2,7 +2,6 @@
 # define RPN_HPP
 
 # include <string>
-# include <stack>
 # include <exception>
 
 class RPN {
