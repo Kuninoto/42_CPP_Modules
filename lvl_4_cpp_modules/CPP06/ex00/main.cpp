@@ -3,13 +3,12 @@
 #include "ScalarConverter.hpp"
 
 using std::cerr;
-using std::endl;
 
 int	main(int argc, char **argv)
 {
     if (argc != 2 || !argv[1][0])
     {
-        cerr << "Usage: ./convert <literal>" << endl;
+        cerr << "Usage: ./convert <literal>" << "\n";
         return EXIT_FAILURE;
     }
     ScalarConverter::convert(argv[1]);

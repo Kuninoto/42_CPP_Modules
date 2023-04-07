@@ -17,7 +17,6 @@ using std::endl;
 #define NOT_A_POSITIVE_ERR "Error: not a positive number."
 #define TOO_LARGE_ERR "Error: too large a number."
 
-
 static float ft_stof(const std::string& str)
 {
     float num;

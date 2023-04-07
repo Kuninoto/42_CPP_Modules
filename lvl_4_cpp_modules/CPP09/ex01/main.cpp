@@ -25,6 +25,11 @@ int main(int argc, char **argv)
 	if (!RPN::valid_expression(argv[1]))
         return panic(INVALID_EXPR_ERR);
 
-    cout << RPN::calculate(argv[1]) << endl;
+    try {
+        cout << RPN::calculate(argv[1]) << endl;
+    }
+    catch (std::exception& e) {
+        cerr << e.what() << "\n";
+    }
 	return EXIT_SUCCESS;
 }

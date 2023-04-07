@@ -7,14 +7,15 @@
 # define MAX_CONTACT_INDEX 7
 
 class PhoneBook {
-    private:
-        size_t count;
-		Contact contacts[MAX_CONTACTS];
     public:
        void addContact(void);
        void searchContact(void);
        /* Default constructor */
        PhoneBook();
+
+    private:
+        size_t count;
+		Contact contacts[MAX_CONTACTS];
 };
 
 #endif // PHONEBOOK_HPP

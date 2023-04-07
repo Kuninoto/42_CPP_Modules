@@ -41,7 +41,7 @@ date_t parseDate(const std::string& date)
                    };
 }
 
-static float getRateFromPreviousDate(std::map<std::string, float>& db, std::string date_to_search)
+static float getRateFromPreviousDate(std::map<std::string, float>& db, const std::string& date_to_search)
 {
     std::map<std::string, float>::iterator itr;
 
@@ -76,7 +76,7 @@ void BitcoinExchange::readDataBase(void)
     db.close();
 }
 
-float BitcoinExchange::getRateFromDataBase(std::string date)
+float BitcoinExchange::getRateFromDataBase(const std::string& date)
 {
     if (this->dataBase.count(date) > 0)
         return this->dataBase.at(date);

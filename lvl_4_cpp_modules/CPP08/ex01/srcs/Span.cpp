@@ -93,5 +93,5 @@ char const* Span::BeyondMaxSize::what(void) const throw() {
 }
 
 char const* Span::NotEnoughElementsException::what(void) const throw() {
-	return "Vector must have more than 2 elements";
+	return "Vector must have at least 2 elements";
 }
