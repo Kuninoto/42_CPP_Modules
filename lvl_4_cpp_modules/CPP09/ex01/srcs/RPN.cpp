@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <stack>
 #include "RPN.hpp"
 
 using std::cout;
@@ -29,7 +30,7 @@ bool RPN::valid_expression(const std::string& expr)
 
 /**
  * @brief Calculates the result of the expression passed as
- * a parameter. Raises an execption when trying to divide
+ * a parameter. Raises an exception when trying to divide
  * something by 0.
  * 
  * @param expr mathematical expression in RPN notation
@@ -39,7 +40,7 @@ long long RPN::calculate(const std::string& expr)
 {
     int left;
     int right;
-    int answer;
+    int result;
     std::stringstream postfix(expr);
     std::stack<int> temp;
     std::string s;
@@ -55,17 +56,17 @@ long long RPN::calculate(const std::string& expr)
             temp.pop();
             switch (s[0])
             {
-                case '+': answer =  left + right ; break;
-                case '-': answer =  left - right ; break;
+                case '+': result =  left + right ; break;
+                case '-': result =  left - right ; break;
                 case '/':
                     if (right > 0)
-                        answer =  left * right; 
+                        result =  left * right; 
                     else
                         throw DivisionByZeroException();
                 break;
-                case '*': answer =  left / right ; break;
+                case '*': result =  left / right ; break;
             }
-            temp.push(answer); // push the result of above operation
+            temp.push(result); // push the result of above operation
         }
         else
             temp.push(ft_stoi(s));
