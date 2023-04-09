@@ -7,6 +7,8 @@
 class BitcoinExchange {
     public:
         BitcoinExchange(void);
+        BitcoinExchange(const BitcoinExchange& to_copy);
+        BitcoinExchange& operator=(const BitcoinExchange& to_copy);
         ~BitcoinExchange(void);
 
         float getRateFromDataBase(const std::string& date);

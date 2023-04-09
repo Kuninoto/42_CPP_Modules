@@ -17,6 +17,18 @@ static int ft_stoi(const std::string& str)
     return num;
 }
 
+RPN::RPN(void) {};
+
+RPN::RPN(const RPN &to_copy) {
+    *this = to_copy;
+}
+
+RPN& RPN::operator=(const RPN &to_copy) {
+    return *this;
+}
+
+RPN::~RPN(void) {};
+
 /**
  * @brief Checks if the <expr> is only composed by
  * operands, operators and spaces
