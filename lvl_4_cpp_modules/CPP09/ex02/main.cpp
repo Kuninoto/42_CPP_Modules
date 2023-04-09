@@ -24,13 +24,16 @@ int main(int argc, char **argv)
     // MISSING DUPLICATE CHECK
     // && refactor this
     try {
-        for (size_t i = 0; argv[i]; i += 1)
+        for (size_t i = 1; argv[i]; i += 1)
             if (std::string(argv[i]).find_first_not_of("0123456789 ") != std::string::npos)
 			    throw PmergeMe::InvalidElementException();
     }
     catch (std::exception& e) {
         cerr << e.what() << '\n';
+        return EXIT_FAILURE;
     }
+
+    pmm.vecMergeSort(argc, argv);
 
 	return EXIT_SUCCESS;
 }
