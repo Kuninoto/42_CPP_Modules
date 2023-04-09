@@ -35,19 +35,13 @@ re: fclean all
 run: all clean
 	@echo ""
 	@echo "TEST 1"
-	./$(NAME) "3 5 9 7 4"
+	./$(NAME) 3 5 9 7 4
 	@echo ""
+#	@echo "TEST 2"
+#	./$(NAME) `shuf -i 1-100000 -n 3000 | tr "\n" " "`
 	@echo "TEST 2"
-	./$(NAME) `shuf -i 1-100000 -n 3000 | tr "\n" " "`
+	./$(NAME) -1 2
 	@echo ""
-	@echo "TEST 3"
-	./$(NAME) "-1" "2"
-	@echo ""
-# @echo "TEST 4"
-# ./$(NAME) "1 0 /"
-# @echo ""
-# @echo "TEST 5"
-# ./$(NAME) "(1 + 1)"
 
 noleaks: re clean
 	echo ""
