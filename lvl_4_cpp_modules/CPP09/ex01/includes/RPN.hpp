@@ -9,6 +9,11 @@ class RPN {
         static bool valid_expression(const std::string& expr);
         static long long calculate(const std::string& expr);
 
+        class NoResultException : public std::exception {
+            public:
+                virtual const char* what() const throw();  
+        };
+
         class DivisionByZeroException : public std::exception {
             public:
                 virtual const char* what() const throw();  

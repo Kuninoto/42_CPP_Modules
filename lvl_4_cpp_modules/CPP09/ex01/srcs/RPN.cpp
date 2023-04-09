@@ -17,21 +17,24 @@ static int ft_stoi(const std::string& str)
     return num;
 }
 
+/**
+ * @brief Checks if the <expr> is only composed by
+ * operands, operators and spaces
+ * 
+ * @param expr mathematical expression in RPN notation
+ */
 bool RPN::valid_expression(const std::string& expr)
 {
-	std::string valid_chars("0123456789+-/* ");
-
-	for (size_t i = 0; i < expr.length(); i += 1) {
-		if (valid_chars.find(expr[i]) == std::string::npos)
-			return false;
-	}
-	return true;
+    if (expr.find_first_not_of("0123456789+-/* ") == std::string::npos)
+	    return true;
+	return false;
 }
 
 /**
  * @brief Calculates the result of the expression passed as
- * a parameter. Raises an exception when trying to divide
- * something by 0.
+ * a parameter. Raises an exception when an expression is 
+ * wrongly formatted according to the RPN notation or when
+ * trying to divide something by 0.
  * 
  * @param expr mathematical expression in RPN notation
  * @return result
@@ -47,32 +50,38 @@ long long RPN::calculate(const std::string& expr)
 
     while (postfix >> s)
     {
-        if (s.at(0) == '+' || s.at(0) == '-' || s.at(0) == '/' || s.at(0) == '*')
+        if (s == "+" || s == "-" || s == "/" || s == "*")
         {
+            if (temp.size() < 2)
+                throw NoResultException();                
             // Pull out top two elements
             right = temp.top();
             temp.pop();
             left = temp.top();
             temp.pop();
-            switch (s[0])
+            switch (s.at(0))
             {
                 case '+': result =  left + right ; break;
                 case '-': result =  left - right ; break;
                 case '/':
-                    if (right > 0)
-                        result =  left * right; 
+                    if (right != 0)
+                        result =  left / right; 
                     else
                         throw DivisionByZeroException();
                 break;
-                case '*': result =  left / right ; break;
+                case '*': result =  left * right ; break;
             }
-            temp.push(result); // push the result of above operation
+            temp.push(result); // push the result of the above operation
         }
         else
             temp.push(ft_stoi(s));
     }
-	// last element is the answer
+	// last element on the stack is the answer
 	return temp.top();
+}
+
+const char*	RPN::NoResultException::what() const throw() {
+	return "RPN exception: No result. Wrongly formatted expression";
 }
 
 const char*	RPN::DivisionByZeroException::what() const throw() {
