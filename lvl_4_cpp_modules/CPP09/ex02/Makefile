@@ -4,9 +4,9 @@ INCLUDE = -I./includes
 VPATH = srcs
 RM = rm -rf
 
-GENERAL = RPN
+GENERAL = PmergeMe
 
-NAME = RPN
+NAME = PmergeMe
 SRCS = $(addsuffix .cpp, $(GENERAL))\
 		main.cpp
 
@@ -47,9 +47,6 @@ run: all clean
 	./$(NAME) "1 0 /"
 	@echo ""
 	@echo "TEST 5"
-	./$(NAME) "3 3 * 9 / 1"
-	@echo ""
-	@echo "TEST 6"
 	./$(NAME) "(1 + 1)"
 
 noleaks: re clean
