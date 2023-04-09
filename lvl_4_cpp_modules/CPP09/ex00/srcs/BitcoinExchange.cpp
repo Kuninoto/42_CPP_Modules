@@ -41,6 +41,15 @@ BitcoinExchange::BitcoinExchange(void) {
     this->readDataBase();
 };
 
+BitcoinExchange::BitcoinExchange(const BitcoinExchange& to_copy) {
+    *this = to_copy;
+}
+
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& to_copy) {
+    this->dataBase = to_copy.dataBase;
+    return *this;
+}
+
 BitcoinExchange::~BitcoinExchange(void) {};
 
 bool BitcoinExchange::isDateInCorrectFormat(const std::string &date)
