@@ -135,7 +135,7 @@ float BitcoinExchange::getRateFromDataBase(const std::string& date)
 {
     if (this->dataBase.count(date) > 0)
         return this->dataBase.at(date);
-    return this->dataBase.lower_bound(date)->second;
+    return (--this->dataBase.lower_bound(date))->second;
 }
 
 void BitcoinExchange::readDataBase(void)
