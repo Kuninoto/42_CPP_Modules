@@ -125,12 +125,15 @@ Anything and probably everything on _Geek_for_geeks_
 Containers I've used:
 ex00 -> map
 ex01 -> stack
-ex02 ->
+ex02 -> vector &&
 
 <b>Useful links</b>:  
 Anything and probably everything on _Geek_for_geeks_  
+ChatGPT  
 [RPN Definition](https://en.wikipedia.org/wiki/Reverse_Polish_notation)  
 [RPN Calculator/Visualizer](https://www.dcode.fr/reverse-polish-notation)  
+[Merge-sort vs. Insertion-sort](https://www.geeksforgeeks.org/merge-sort-vs-insertion-sort/)  
+[Merge-Insertion-sort definition](https://en.wikipedia.org/wiki/Merge-insertion_sort)
 
 </details>
 

@@ -1,7 +1,6 @@
 #ifndef PMERGEME_HPP
 # define PMERGEME_HPP
 
-# include <vector>
 # include <exception>
 
 class PmergeMe {
@@ -11,8 +10,8 @@ class PmergeMe {
         PmergeMe &operator=(const PmergeMe& to_copy);
         ~PmergeMe(void);
 
-        void vecMergeSort(int argc, char **argv);
-        // void ?MergeSort(int argc, char **argv);
+        void sortVec(int argc, char **argv);
+        void sortList(int argc, char **argv);
 
         class InvalidElementException : public std::exception {
             public:
