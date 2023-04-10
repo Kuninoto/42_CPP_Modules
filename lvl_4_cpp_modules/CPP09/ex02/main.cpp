@@ -48,6 +48,7 @@ int main(int argc, char **argv)
     }
 
     pmm.sortVec(argc, argv);
+    cout << endl;
     pmm.sortList(argc, argv);
 
 	return EXIT_SUCCESS;
