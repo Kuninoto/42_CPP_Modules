@@ -25,7 +25,7 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& to_copy) {
 
 PmergeMe::~PmergeMe(void) {};
 
-void printVec(std::vector<unsigned int>& vec)
+static void printVec(std::vector<unsigned int>& vec)
 {
 	std::vector<unsigned int>::const_iterator itr;
 	for (itr = vec.begin(); itr != vec.end(); itr++)
@@ -95,7 +95,7 @@ void PmergeMe::sortVec(int argc, char **argv)
 		storage.push_back(ft_stou(argv[i]));
 	}
 
-	cout << "Before: ";
+	cout << "<vec>Before: ";
 	printVec(storage);
 
 	std::clock_t start = std::clock();
@@ -104,7 +104,7 @@ void PmergeMe::sortVec(int argc, char **argv)
 
 	double time_taken = static_cast<double>(std::clock() - start) / static_cast<double>(CLOCKS_PER_SEC) * MICROSECOND;
 
-	cout << "After: ";
+	cout << "<vec>After: ";
 	printVec(storage);
 
 	cout << "Time to process a range of " << argc - 1
@@ -112,7 +112,7 @@ void PmergeMe::sortVec(int argc, char **argv)
 		 << time_taken << " µs" << endl;
 }
 
-void printList(std::list<unsigned int>& lst)
+static void printList(std::list<unsigned int>& lst)
 {
 	std::list<unsigned int>::const_iterator itr;
 	for (itr = lst.begin(); itr != lst.end(); itr++)
@@ -187,11 +187,17 @@ void PmergeMe::sortList(int argc, char **argv)
 	for (int i = 1; i < argc; i += 1)
 		storage.push_back(ft_stou(argv[i]));
 
+    cout << "<list>Before: ";
+	printList(storage);
+
 	std::clock_t start = std::clock();
 
 	storage = mergeInsertList(storage);
 
 	double time_taken = static_cast<double>(std::clock() - start) / static_cast<double>(CLOCKS_PER_SEC) * MICROSECOND;
+
+    cout << "<list>After: ";
+	printList(storage);
 
 	cout << "Time to process a range of " << argc - 1
 		 << " elements " << "with std::list<unsigned int> : " 

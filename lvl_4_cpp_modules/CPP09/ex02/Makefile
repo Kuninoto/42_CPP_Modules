@@ -37,8 +37,8 @@ run: all clean
 	@echo "TEST 1"
 	./$(NAME) 3 5 9 7 4
 	@echo ""
-	@echo "TEST 2"
-	./$(NAME) `shuf -i 1-100000 -n 3000 | tr "\n" " "`
+#	@echo "TEST 2"
+#	./$(NAME) `shuf -i 1-100000 -n 3000 | tr "\n" " "`
 	@echo "TEST 4"
 	./$(NAME) -1 2
 	@echo ""
