@@ -54,14 +54,14 @@ int main(int argc, char **argv)
 			continue ;
 		}
 
+		std::string date = line.substr(0, delim - 1);
+		if (!btc.isDateInCorrectFormat(date) || !btc.isValidDate(date))
+			continue;
+
         std::string rate_as_str = line.substr(delim + 2);
 		if (!btc.isRateInCorrectFormat(rate_as_str))
 			continue;
 		float rate = ft_stof(rate_as_str);
-
-		std::string date = line.substr(0, delim - 1);
-		if (!btc.isDateInCorrectFormat(date) || !btc.isValidDate(date))
-			continue;
 
 		cout << date << " => " << rate << " = " << std::setprecision(2) << rate * btc.getRateFromDataBase(date) << endl;
     }
