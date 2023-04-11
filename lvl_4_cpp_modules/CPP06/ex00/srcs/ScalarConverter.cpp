@@ -36,7 +36,6 @@ static double ft_stod(const std::string& str)
     return num;
 }
 
-
 enum literal_type {
     error,
     _pseudo_literal,
@@ -59,7 +58,7 @@ static bool is_char(const std::string& literal)
 
 static bool is_int(const std::string& literal)
 {
-    for (size_t i = literal.at(0) ? 1 : 0; i < literal.length(); i += 1)
+    for (size_t i = literal.at(0) == '-' ? 1 : 0; i < literal.length(); i += 1)
     {
         if (!isdigit(literal.at(i)))
             return false;
@@ -83,7 +82,7 @@ static bool is_float(const std::string& literal)
         else if (literal.at(i) == '.')
         {
             found_point = true;
-            continue ;
+            continue;
         }
         if (!isdigit(literal.at(i)))
             return false;
@@ -153,7 +152,7 @@ void literal_int(int nbr)
 static void literal_float(float nbr)
 {
     if (isprint(nbr))
-        cout << "char: '" << static_cast<char>(nbr)  << "'" << endl;
+        cout << "char: '" << static_cast<char>(nbr) << "'" << endl;
     else
         cout << "char: Non displayable" << endl;
     cout << "int: " << static_cast<int>(nbr) << endl;
