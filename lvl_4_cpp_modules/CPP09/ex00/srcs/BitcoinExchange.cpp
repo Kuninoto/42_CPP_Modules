@@ -4,8 +4,6 @@
 #include <sstream>
 #include "BitcoinExchange.hpp"
 
-#define DB_FILE "./data.csv"
-
 using std::cerr;
 
 #define BAD_INPUT_ERR "Error: bad input => "
@@ -37,9 +35,7 @@ float ft_stof(const std::string& str)
     return num;
 }
 
-BitcoinExchange::BitcoinExchange(void) {
-    this->readDataBase();
-};
+BitcoinExchange::BitcoinExchange(void) {};
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& to_copy) {
     *this = to_copy;
@@ -51,6 +47,13 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& to_copy) {
 }
 
 BitcoinExchange::~BitcoinExchange(void) {};
+
+float BitcoinExchange::getRateFromDataBase(const std::string& date)
+{
+    if (this->dataBase.count(date) > 0)
+        return this->dataBase.at(date);
+    return (--this->dataBase.lower_bound(date))->second;
+}
 
 bool BitcoinExchange::isDateInCorrectFormat(const std::string &date)
 {
@@ -121,7 +124,7 @@ bool BitcoinExchange::isRateInCorrectFormat(const std::string& rate)
 {
 	if (rate.empty() || rate.find_first_not_of("0123456789.-") != std::string::npos
 	||  rate.at(0) == '.' || rate.find('.', rate.length() - 1) != std::string::npos)
-		cerr << INVALID_RATE_ERR << rate << '\n';
+		cerr << INVALID_RATE_ERR << "\"" << rate << "\"" << '\n';
 	else if (rate.at(0) == '-')
 		cerr << NOT_A_POSITIVE_ERR << '\n';
 	else if (rate.length() > 10 || (rate.length() == 10 && rate > "2147483647"))
@@ -131,27 +134,19 @@ bool BitcoinExchange::isRateInCorrectFormat(const std::string& rate)
 	return false;
 }
 
-float BitcoinExchange::getRateFromDataBase(const std::string& date)
+void BitcoinExchange::readInternalDataBase(std::ifstream& internal_db)
 {
-    if (this->dataBase.count(date) > 0)
-        return this->dataBase.at(date);
-    return (--this->dataBase.lower_bound(date))->second;
-}
-
-void BitcoinExchange::readDataBase(void)
-{
-    std::ifstream db(DB_FILE, std::ifstream::in);
     std::string line;
     size_t delim;
 
     // skip first line
-    std::getline(db, line);
-    while (std::getline(db, line))
+    std::getline(internal_db, line);
+    while (std::getline(internal_db, line))
     {
         delim = line.find(',');
         std::string rate = line.substr(delim + 1);
         // set a new pair on the map <date, rate>
         this->dataBase[line.substr(0, delim)] = ft_stof(rate);
     }
-    db.close();
+    internal_db.close();
 }

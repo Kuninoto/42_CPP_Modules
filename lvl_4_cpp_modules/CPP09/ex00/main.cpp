@@ -13,6 +13,8 @@ using std::endl;
 
 #define BAD_INPUT_ERR "Error: bad input => "
 #define FILE_OPEN_ERR "Error: could not open file"
+#define INTERNAL_DB_OPEN_ERR "Error: fatal: could not open internal database file"
+#define INTERNAL_DB_FILE "./data.csv"
 
 float ft_stof(const std::string& str);
 
@@ -27,19 +29,26 @@ int main(int argc, char **argv)
 	if (argc != 2)
 		return panic(FILE_OPEN_ERR);
 
-	std::ifstream input_db_file(argv[1], std::ifstream::in);
-	if (!input_db_file.is_open())
+	std::ifstream input_db(argv[1], std::ifstream::in);
+	if (!input_db.is_open())
 		return panic(FILE_OPEN_ERR);
 
+    std::ifstream internal_db(INTERNAL_DB_FILE, std::ifstream::in);
+	if (!internal_db.is_open())
+		return panic(INTERNAL_DB_OPEN_ERR);
+
 	BitcoinExchange btc;
+	btc.readInternalDataBase(internal_db);
+
 	std::string line;
 
     // skip first line
-    std::getline(input_db_file, line);
-    while (std::getline(input_db_file, line))
+    std::getline(input_db, line);
+    while (std::getline(input_db, line))
     {
         size_t delim = line.find('|');
-		if (delim == std::string::npos)
+		if (delim == std::string::npos
+		||	line.length() < delim + 2)
 		{
 			cerr << BAD_INPUT_ERR << "\"" << line << "\"" << '\n';
 			continue ;
@@ -56,6 +65,6 @@ int main(int argc, char **argv)
 
 		cout << date << " => " << rate << " = " << std::setprecision(2) << rate * btc.getRateFromDataBase(date) << endl;
     }
-    input_db_file.close();
+    input_db.close();
 	return EXIT_SUCCESS;
 }

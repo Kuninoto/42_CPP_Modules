@@ -11,6 +11,8 @@ class BitcoinExchange {
         BitcoinExchange& operator=(const BitcoinExchange& to_copy);
         ~BitcoinExchange(void);
 
+        void readInternalDataBase(std::ifstream& internal_db);
+
         float getRateFromDataBase(const std::string& date);
 
         bool isDateInCorrectFormat(const std::string &date);
@@ -19,7 +21,6 @@ class BitcoinExchange {
 
     private:
         std::map<std::string, float> dataBase;
-        void readDataBase(void);
 };
 
 #endif // BITCOINEXCHANGE_HPP

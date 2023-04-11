@@ -1,7 +1,6 @@
 #include "Bureaucrat.hpp"
 
 using std::cout;
-using std::cerr;
 using std::endl;
 
 Bureaucrat::Bureaucrat(void) {
@@ -18,9 +17,9 @@ Bureaucrat::Bureaucrat(const Bureaucrat& to_copy)
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name)
 {
 	if (grade < HIGHEST_GRADE)
-		throw(Bureaucrat::GradeTooHighException());
+		throw Bureaucrat::GradeTooHighException();
 	else if (grade > LOWEST_GRADE)
-		throw(Bureaucrat::GradeTooLowException());
+		throw Bureaucrat::GradeTooLowException();
 	else
 		this->grade = grade;
 	cout << "[Bureaucrat] <" << this->getName() << "> constructor called" << endl;
@@ -58,7 +57,7 @@ void Bureaucrat::setGrade(int grade) {
 void Bureaucrat::incrementGrade(void)
 {
 	if (grade - 1 < HIGHEST_GRADE)
-		throw (Bureaucrat::GradeTooHighException());
+		throw Bureaucrat::GradeTooHighException();
 	else
 		this->grade -= 1;
 }
@@ -66,7 +65,7 @@ void Bureaucrat::incrementGrade(void)
 void Bureaucrat::decrementGrade(void)
 {
 	if (grade + 1 > LOWEST_GRADE)
-		throw(Bureaucrat::GradeTooLowException());
+		throw Bureaucrat::GradeTooLowException();
 	else
 		this->grade += 1;
 }
