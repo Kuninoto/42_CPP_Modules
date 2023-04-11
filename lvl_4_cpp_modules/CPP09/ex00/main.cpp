@@ -66,5 +66,6 @@ int main(int argc, char **argv)
 		cout << date << " => " << rate << " = " << std::setprecision(2) << rate * btc.getRateFromDataBase(date) << endl;
     }
     input_db.close();
+    internal_db.close();
 	return EXIT_SUCCESS;
 }
