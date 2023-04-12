@@ -1,16 +1,16 @@
 #include <cstdlib> // EXIT_* MACROS
-#include <iostream> // std::string, std::cin, std::cout, std::endl
+#include <iostream> // std::cin, std::cout, std::endl
+#include <string>
 #include <stdio.h>
 #include "Zombie.hpp"
 
-using std::string;
 using std::cin;
 using std::cout;
 using std::endl;
 
 int main(void)
 {
-    string zombies_name;
+    std::string zombies_name;
     int n;
 
     while (1)

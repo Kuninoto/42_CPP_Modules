@@ -1,12 +1,7 @@
 #include "Zombie.hpp"
-#include <iostream> // std::string, std::cin, std::cout, std::endl
+#include <string>
 
-using std::string;
-using std::cin;
-using std::cout;
-using std::endl;
-
-Zombie  *zombieHorde(int N, string name)
+Zombie  *zombieHorde(int N, std::string name)
 {
     Zombie *zombie_array = new Zombie[N];
 

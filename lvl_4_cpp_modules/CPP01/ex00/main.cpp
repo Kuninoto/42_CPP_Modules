@@ -1,19 +1,19 @@
 #include <cstdlib> // EXIT_* MACROS
-#include <iostream> // std::string, std::cin, std::cout, std::endl
+#include <iostream> // std::cin, std::cout, std::endl
+#include <string>
 #include <stdio.h>
 #include "Zombie.hpp"
 
-using std::string;
 using std::cin;
 using std::cout;
 using std::endl;
 
 int main(void)
 {
-    string input;
+    std::string input;
 
     /* STACK */
-    cout << "Name a Zombie 🧟‍♂️: ";
+    cout << "Name the stacked Zombie 🧟‍♂️: ";
     getline(cin, input);
     if (cin.eof() == true)
     {
@@ -25,7 +25,7 @@ int main(void)
     randomChump(input);
 
     /* HEAP ZOMBIE */
-    cout << "Name a Zombie 🧟‍♂️: ";
+    cout << "Name the heap Zombie 🧟‍♂️: ";
     getline(cin, input);
     if (cin.eof() == true)
     {

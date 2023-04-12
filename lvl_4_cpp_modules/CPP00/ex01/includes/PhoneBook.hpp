@@ -8,10 +8,11 @@
 
 class PhoneBook {
     public:
-       void addContact(void);
-       void searchContact(void);
        /* Default constructor */
        PhoneBook();
+
+       void addContact(void);
+       void searchContact(void);
 
     private:
         size_t count;
