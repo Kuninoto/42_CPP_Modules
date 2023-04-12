@@ -2,24 +2,23 @@
 # define ZOMBIE_HPP
 
 # include <string>
-using std::string;
 
 class Zombie {
     public:
         /* Destructor */
         ~Zombie(void);
 
-        void setName(string name);
+        void setName(std::string name);
 
-        string getName(void);
+        const std::string& getName(void) const;
 
         void announce(void);
     private:
-        string name;
+        std::string name;
 };
 
 /* Allocate N Zombie objects in a single allocation
 and sets all their names to <name> */
-Zombie  *zombieHorde(int N, string name);
+Zombie  *zombieHorde(int N, std::string name);
 
 #endif // ZOMBIE_HPP

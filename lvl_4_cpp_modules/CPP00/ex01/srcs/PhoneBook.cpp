@@ -7,17 +7,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-// Utils
-
-bool is_onlydigits(std::string input)
-{
-	for (size_t i = 0; i < input.length(); i += 1)
-		if (!isdigit(input[i]))
-			return false;
-	return true;
-}
-
-std::string get_formatted_field(const std::string field)
+std::string getFormattedField(const std::string& field)
 {
 	if (field.length() > 10)
 		return field.substr(0,9) + ".";
@@ -59,7 +49,7 @@ void PhoneBook::addContact(void)
 	{
 		cout << "Phone number 📞: ";
 		getline(cin, input);
-		if (!input.empty() && !is_onlydigits(input))
+		if (!input.empty() && input.find_first_not_of("0123456789") != std::string::npos) 
 		{
 			cin.clear();
 			cout << "Phone number must be fully composed by numbers" << endl;
@@ -94,9 +84,9 @@ void PhoneBook::searchContact(void)
 	for (size_t i = 0; i < this->count; i += 1)
 	{
 		cout << "|" << std::right << std::setw(10) << i << "|";
-		cout << std::right << std::setw(10) << get_formatted_field(contacts[i].getFirstName()) << "|" ;
-		cout << std::right << std::setw(10) << get_formatted_field(contacts[i].getLastName()) << "|";
-		cout << std::right << std::setw(10) << get_formatted_field(contacts[i].getNickname()) << "|";
+		cout << std::right << std::setw(10) << getFormattedField(contacts[i].getFirstName()) << "|" ;
+		cout << std::right << std::setw(10) << getFormattedField(contacts[i].getLastName()) << "|";
+		cout << std::right << std::setw(10) << getFormattedField(contacts[i].getNickname()) << "|";
 		cout << endl;
 	}
 
@@ -107,7 +97,7 @@ void PhoneBook::searchContact(void)
 	{
 		cout << "Please insert the index of the contact you'd like to display: ";
 		getline(cin, index);
-		if (!index.empty() && is_onlydigits(index))
+		if (!index.empty() && index.find_first_not_of("0123456789") == std::string::npos)
 		{
 			conv_index = atoi(index.c_str());
 			if (conv_index <= MAX_CONTACT_INDEX)

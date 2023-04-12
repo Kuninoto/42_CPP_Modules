@@ -1,24 +1,22 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
 
-Zombie::~Zombie()
-{
-    cout << "Zombie " << getName() << " died 💀" << endl;
+Zombie::~Zombie(void) {
+    cout << "Zombie " << this->getName() << " died 💀" << endl;
 }
 
-void Zombie::setName(string name) {
+void Zombie::setName(std::string name) {
     this->name = name;
 }
 
-string Zombie::getName(void) {
-    return name;
+const std::string& Zombie::getName(void) const {
+    return this->name;
 }
 
 void Zombie::announce(void) {
-    cout << getName() << ": BraiiiiiiinnnzzzZ..." << endl;
+    cout << this->getName() << ": BraiiiiiiinnnzzzZ..." << endl;
 }
