@@ -1,15 +1,14 @@
-#include <iostream> // std::string, std::cout, std::endl
+#include <iostream> // std::cout, std::endl
 #include <cstdlib> // EXIT_* MACROS
 
-using std::string;
 using std::cout;
 using std::endl;
 
 int main(void)
 {
-    string stringOG = "HI THIS IS BRAIN";
-    string *stringPTR = &stringOG;
-    string &stringREF = stringOG;
+    std::string stringOG = "HI THIS IS BRAIN";
+    std::string *stringPTR = &stringOG;
+    std::string &stringREF = stringOG;
 
     cout << "Address of stringOG = " << &stringOG << endl;
     cout << "Thru pointer value = " << stringPTR << endl;

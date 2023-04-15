@@ -18,4 +18,4 @@ class Point {
 		Fixed const y;
 };
 
-#endif
+#endif // POINT_HPP

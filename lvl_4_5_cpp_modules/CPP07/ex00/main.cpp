@@ -5,12 +5,9 @@
 
 using std::cout;
 using std::endl;
-using std::string;
 
-int main(int argc, char **argv)
+int main(void)
 {
-	(void)argc;
-	(void)argv;
 	int a = 2;
 	int b = 3;
 
@@ -20,8 +17,8 @@ int main(int argc, char **argv)
 	cout << "min(a, b) = " << ::min(a, b) << endl;
 	cout << "max(a, b) = " << ::max(a, b) << endl;
 
-	string c = "chaine1";
-	string d = "chaine2";
+	std::string c = "chaine1";
+	std::string d = "chaine2";
 
 	::swap(c, d);
 

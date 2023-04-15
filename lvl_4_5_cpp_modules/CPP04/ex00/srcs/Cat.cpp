@@ -11,14 +11,13 @@ Cat::Cat(void) : Animal() {
 
 Cat::Cat(const Cat &to_copy) : Animal(to_copy)
 {
-	this->type = to_copy.type;
+	*this = to_copy;
 	cout << "[Cat] copy constructor has been called " << endl;
 }
 
 Cat& Cat::operator=(const Cat &to_copy)
 {
-	if (this != &to_copy)
-		this->type = to_copy.type;
+	this->type = to_copy.type;
 	cout << "[Cat] copy assignment constructor has been called " << endl;
 	return *this;
 }

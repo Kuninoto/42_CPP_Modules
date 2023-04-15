@@ -4,31 +4,29 @@
 using std::cout;
 using std::endl;
 
-Fixed::Fixed(void)
-{
+Fixed::Fixed(void) : value(0) {
 	cout << "Default constructor called" << endl;
-	this->value = 0;
 }
 
 Fixed::Fixed(const Fixed &to_copy) {
 	cout << "Copy constructor called" << endl;
-	this->setRawBits(to_copy.getRawBits());
+	*this = to_copy;
 }
 
 Fixed &Fixed::operator=(const Fixed &original)
 {
 	cout << "Copy assignment operator called" << endl;
 	this->setRawBits(original.getRawBits());
-	return (*this);
+	return *this;
 }
 
-Fixed::~Fixed() {
+Fixed::~Fixed(void) {
 	cout << "Destructor called" << endl;
 };
 
 int Fixed::getRawBits(void) const
 {
-	cout << "getRawBits member function called" << endl;
+	cout << "getRawBits() member function called" << endl;
 	return this->value;
 }
 

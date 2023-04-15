@@ -21,12 +21,12 @@ class Span {
 
 		class NotEnoughElementsException : public std::exception {
 			public:
-				char const* what(void) const throw();
+				char const* what() const throw();
 		};
 		
 		class BeyondMaxSize : public std::exception {
 			public:
-				char const* what(void) const throw();
+				virtual const char* what() const throw();
 		};
 
 	private:

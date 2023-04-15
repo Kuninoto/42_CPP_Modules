@@ -2,24 +2,23 @@
 # define CLAPTRAP_HPP
 
 # include <string>
-using std::string;
 
-class ClapTrap
-{
+class ClapTrap {
 	public:
-		ClapTrap(string name);
+		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &to_copy);
 		ClapTrap& operator=(const ClapTrap &original);
 		~ClapTrap(void);
 
-		void attack(const string& target);
+		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+
 	private:
-		string name;
+		std::string name;
 		unsigned int hit_points;
 		unsigned int energy_points;
 		unsigned int attack_damage;
 };
 
-#endif
+#endif // CLAPTRAP_HPP

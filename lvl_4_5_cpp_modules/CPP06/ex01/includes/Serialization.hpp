@@ -5,12 +5,10 @@
 # include <stdint.h>
 # include "Data.hpp"
 
-using std::string;
-
 class Serialization {
 	public:
-		static uintptr_t serialize(Data *ptr);
-		static Data *deserialize(uintptr_t raw);
+		static uintptr_t serialize(data_t *ptr);
+		static data_t *deserialize(uintptr_t raw);
 };
 
 #endif // SERIALIZATION_HPP

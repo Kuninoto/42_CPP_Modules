@@ -45,7 +45,7 @@ enum literal_type {
     _double,
 };
 
-static bool is_char(const std::string& literal)
+static bool isChar(const std::string& literal)
 {
     if (literal.length() != 1)
         return false;
@@ -56,17 +56,16 @@ static bool is_char(const std::string& literal)
     return true;
 }
 
-static bool is_int(const std::string& literal)
+static bool isInt(const std::string& literal)
 {
-    for (size_t i = literal.at(0) == '-' ? 1 : 0; i < literal.length(); i += 1)
-    {
+    for (size_t i = literal.at(0) == '-' ? 1 : 0; i < literal.length(); i += 1) {
         if (!isdigit(literal.at(i)))
             return false;
     }
     return true;
 }
 
-static bool is_float(const std::string& literal)
+static bool isFloat(const std::string& literal)
 {
     bool    found_point;
 
@@ -90,7 +89,7 @@ static bool is_float(const std::string& literal)
     return true;
 }
 
-static bool is_double(const std::string& literal)
+static bool isDouble(const std::string& literal)
 {
     bool    found_point;
 
@@ -112,25 +111,25 @@ static bool is_double(const std::string& literal)
     return true;
 }
 
-static bool is_pseudo_literal(const std::string& literal) {
+static bool isPseudoLiteral(const std::string& literal) {
     return (literal == "-inff" || literal == "+inff" || literal == "nanf"
-         || literal == "-inf" || literal == "+inf" || literal == "nan");
+          || literal == "-inf" || literal == "+inf"  || literal == "nan");
 }
 
-literal_type get_type(const std::string& literal)
+static literal_type getType(const std::string& literal)
 {
-    if (is_char(literal))
+    if (isChar(literal))
         return _char;
-    if (is_int(literal))
+    if (isInt(literal))
         return _int;
-    if (is_float(literal))
+    if (isFloat(literal))
        return _float;
-    if (is_double(literal))
+    if (isDouble(literal))
        return _double;
     return error;
 }
 
-void literal_char(char ch)
+static void literalChar(char ch)
 {
     cout << "char: '" << ch << "'" << endl;
     cout << "int: " << static_cast<int>(ch) << endl;
@@ -138,7 +137,7 @@ void literal_char(char ch)
     cout << "double: " << static_cast<double>(ch) << ".0" << endl;
 }
 
-void literal_int(int nbr)
+static void literalInt(int nbr)
 {
     if (isprint(nbr))
         cout << "char: '" << static_cast<char>(nbr)  << "'" << endl; 
@@ -149,7 +148,7 @@ void literal_int(int nbr)
     cout << "double: " << static_cast<double>(nbr) << ".0" << endl;
 }
 
-static void literal_float(float nbr)
+static void literalFloat(float nbr)
 {
     if (isprint(nbr))
         cout << "char: '" << static_cast<char>(nbr) << "'" << endl;
@@ -160,7 +159,7 @@ static void literal_float(float nbr)
     cout << "double: " << static_cast<double>(nbr) << ".0" << endl;
 }
 
-static void literal_double(double nbr)
+static void literalDouble(double nbr)
 {
     if (isprint(nbr))
         cout << "char: '" << static_cast<char>(nbr)  << "'" << endl;
@@ -171,7 +170,7 @@ static void literal_double(double nbr)
     cout << "double: " << nbr << ".0" << endl;
 }
 
-static void pseudo_literal(literal_type dest_type, const std::string& pseudo_literal)
+static void pseudoLiteral(literal_type dest_type, const std::string& pseudo_literal)
 {
     cout << "char: impossible" << endl;
     cout << "int: impossible" << endl; 
@@ -189,28 +188,28 @@ static void pseudo_literal(literal_type dest_type, const std::string& pseudo_lit
 
 void ScalarConverter::convert(const std::string& literal)
 {
-    switch (get_type(literal))
+    switch (getType(literal))
     {
         case _char:
-            literal_char(literal.at(0));
+            literalChar(literal.at(0));
             break;
 
         case _int:
-            literal_int(ft_stoi(literal));
+            literalInt(ft_stoi(literal));
             break;
 
         case _float:
-            if (is_pseudo_literal(literal))
-                pseudo_literal(_float, literal);
+            if (isPseudoLiteral(literal))
+                pseudoLiteral(_float, literal);
             else
-                literal_float(ft_stof(literal));
+                literalFloat(ft_stof(literal));
             break;
 
         case _double:
-            if (is_pseudo_literal(literal))
-                pseudo_literal(_double, literal);
+            if (isPseudoLiteral(literal))
+                pseudoLiteral(_double, literal);
             else
-                literal_double(ft_stod(literal));
+                literalDouble(ft_stod(literal));
             break;
 
         default:

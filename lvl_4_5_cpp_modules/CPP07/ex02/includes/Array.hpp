@@ -21,7 +21,7 @@ class Array {
 		uint32_t size(void);
 		class OutOfBoundsException : public std::exception {
 			public:
-				char const* what(void) const throw();
+				virtual const char* what(void) const throw();
 		};
 
 	private:

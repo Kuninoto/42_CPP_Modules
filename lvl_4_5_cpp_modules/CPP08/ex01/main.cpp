@@ -6,11 +6,8 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-int main(int argc, char **argv)
+int main(void)
 {
-	(void)argc;
-	(void)argv;
-
 	Span sp = Span(5);
 
 	sp.addNumber(6);
@@ -22,7 +19,6 @@ int main(int argc, char **argv)
 	cout << sp.shortestSpan() << endl;
 	cout << sp.longestSpan() << endl;
 
-	// EXCEPTIONS
 
 	// Pushing beyond N elements
 	try {

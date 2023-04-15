@@ -16,11 +16,8 @@ Brain::Brain(const Brain &to_copy)
 
 Brain& Brain::operator=(const Brain &to_copy)
 {
-	if (this != &to_copy)
-	{
-		for (size_t i = 0; i < 100; i += 1) {
-			this->ideas[i] = to_copy.ideas[i];
-		}
+	for (size_t i = 0; i < 100; i += 1) {
+		this->ideas[i] = to_copy.ideas[i];
 	}
 	cout << "[Brain] copy assignment constructor has been called" << endl;
 	return *this;

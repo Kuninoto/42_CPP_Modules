@@ -2,13 +2,13 @@
 # define HARL_HPP
 
 # include <string>
-using std::string;
 
 class Harl {
 	public:
 		Harl(void);
 		~Harl(void);
-		void complain(string level);
+		void complain(std::string level);
+
 	private:
 		void debug(void);
 		void info(void);

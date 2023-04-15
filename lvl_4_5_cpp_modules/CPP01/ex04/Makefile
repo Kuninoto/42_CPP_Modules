@@ -24,10 +24,12 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) *.replace
 
 re: fclean all
 
 run: all clean
+	./$(NAME) test.txt "replace" "abc"
 
 .PHONY: all clean fclean re run
 

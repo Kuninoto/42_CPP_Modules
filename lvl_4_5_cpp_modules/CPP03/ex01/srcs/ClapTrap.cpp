@@ -4,29 +4,23 @@
 using std::cout;
 using std::endl;
 
-ClapTrap::ClapTrap(string name)
+ClapTrap::ClapTrap(std::string name)
 : name(name), hit_points(10), energy_points(10), attack_damage(0) {
 	cout << "Super Class (ClapTrap) <" << name << "> constructor has been called!" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &to_copy)
 {
-	this->name = to_copy.name;
-	this->hit_points = to_copy.hit_points;
-	this->energy_points = to_copy.energy_points;
-	this->attack_damage = to_copy.attack_damage;
+	*this = to_copy;
 	cout << "Super Class (ClapTrap) copy constructor has been called!" << endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap &original)
 {
-	if (this != &original)
-	{
-		this->name = original.name;
-		this->hit_points = original.hit_points;
-		this->energy_points = original.energy_points;
-		this->attack_damage = original.attack_damage;
-	}
+	this->name = original.name;
+	this->hit_points = original.hit_points;
+	this->energy_points = original.energy_points;
+	this->attack_damage = original.attack_damage;
 	cout << "Super Class (ClapTrap) copy assignment constructor has been called!" << endl;
 	return *this;
 }
@@ -35,7 +29,7 @@ ClapTrap::~ClapTrap(void) {
 	cout << "Super Class (ClapTrap) destructor has been called" << endl;
 };
 
-void ClapTrap::attack(const string& target)
+void ClapTrap::attack(const std::string& target)
 {
 	if (this->energy_points == 0)
 	{

@@ -4,15 +4,14 @@
 # include <string>
 # include "Weapon.hpp"
 
-using std::string;
-
 class HumanA {
-	private:
-		string name;
-		Weapon &weapon;
 	public:
-		HumanA(string name, Weapon &weapon);
+		HumanA(std::string name, Weapon &weapon);
 		void attack(void);
+
+	private:
+		std::string name;
+		Weapon &weapon;
 };
 
 #endif // HUMAN_A_HPP

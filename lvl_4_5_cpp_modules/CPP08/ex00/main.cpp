@@ -6,11 +6,8 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-int main(int argc, char **argv)
+int main(void)
 {
-	(void)argc;
-	(void)argv;
-	
 	// VECTOR //
 	std::vector<int> v1;
 	for (size_t i = 0; i <= 10; i += 1) {
@@ -27,7 +24,7 @@ int main(int argc, char **argv)
 	try {
 		easyfind(v1, 0);
 	}
-	catch(const std::exception& e) {
+	catch (const std::exception& e) {
 		cerr << e.what() << '\n';
 	}
 	
@@ -35,7 +32,7 @@ int main(int argc, char **argv)
 	try {
 		easyfind(v1, 20);
 	}
-	catch(const std::exception& e) {
+	catch (const std::exception& e) {
 		cerr << e.what() << '\n';
 	}
 	return EXIT_SUCCESS;

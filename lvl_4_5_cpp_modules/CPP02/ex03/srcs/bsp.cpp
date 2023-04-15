@@ -13,7 +13,7 @@ static Fixed abs(Fixed x)
 	+ x3*(y1 - y2) ) / 2
 */	
 
-static Fixed triangle_area(Point const p1, Point const p2, Point const p3)
+static Fixed triangleArea(Point const p1, Point const p2, Point const p3)
 {
 	return (abs(
 		  		(p1.getX() * (p2.getY() - p3.getY())
@@ -25,10 +25,10 @@ static Fixed triangle_area(Point const p1, Point const p2, Point const p3)
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
 {
-	Fixed abcArea = triangle_area(a, b, c);
-    Fixed pbcArea = triangle_area(point, b, c);
-    Fixed pacArea = triangle_area(point, c, a);
-    Fixed pabArea = triangle_area(point, a, b);
+	Fixed abcArea = triangleArea(a, b, c);
+    Fixed pbcArea = triangleArea(point, b, c);
+    Fixed pacArea = triangleArea(point, c, a);
+    Fixed pabArea = triangleArea(point, a, b);
 
 	return (abcArea == (pbcArea + pacArea + pabArea));
 }

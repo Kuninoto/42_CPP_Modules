@@ -1,7 +1,6 @@
 #include "Harl.hpp"
 #include <iostream>
 
-using std::string;
 using std::cout;
 using std::endl;
 
@@ -29,10 +28,10 @@ void Harl::error(void) {
 	cout << HARL_ERROR << endl;
 }
 
-void Harl::complain(string level)
+void Harl::complain(std::string level)
 {
-	harl_func_t	harl_funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	harl_func_t	harl_funcs[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (size_t i = 0; i < 4; i += 1)
 		if (level == levels[i])

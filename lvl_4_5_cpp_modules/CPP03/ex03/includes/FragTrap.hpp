@@ -7,11 +7,10 @@ class FragTrap : virtual public ClapTrap
 {
 	public:
 		FragTrap(void);
-		FragTrap(string name);
+		FragTrap(std::string name);
 		~FragTrap(void);
 
 		void highFivesGuys(void);
-	private:
 };
 
 #endif // FRAGTRAP_HPP

@@ -6,7 +6,7 @@ using std::endl;
 
 ScavTrap::ScavTrap(void) {};
 
-ScavTrap::ScavTrap(string name) : ClapTrap(name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->hit_points = 100;
 	this->energy_points = 50;
@@ -18,7 +18,7 @@ ScavTrap::~ScavTrap(void) {
 	cout << "Sub Class (ScavTrap) destructor has been called" << endl;
 }
 
-void ScavTrap::attack(const string& target)
+void ScavTrap::attack(const std::string& target)
 {
 	if (this->energy_points == 0)
 	{

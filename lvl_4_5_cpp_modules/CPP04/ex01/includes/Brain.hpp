@@ -2,7 +2,6 @@
 # define BRAIN_HPP
 
 # include <string>
-using std::string;
 
 class Brain {
 	public:
@@ -12,7 +11,7 @@ class Brain {
 		~Brain(void);
 
 	private:
-		string ideas[100];
+		std::string ideas[100];
 };
 
 #endif // BRAIN_HPP

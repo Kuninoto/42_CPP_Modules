@@ -3,12 +3,11 @@
 #include <stdio.h> // clearerr()
 #include "Harl.hpp"
 
-using std::string;
 using std::cin;
 using std::cout;
 using std::endl;
 
-bool	is_input_valid(string input)
+bool isInputValid(const std::string& input)
 {
 	if (input != "DEBUG" && input != "INFO"
 	&& input != "WARNING" && input != "ERROR")
@@ -22,7 +21,7 @@ bool	is_input_valid(string input)
 int main(void)
 {
 	Harl harl;
-	string input;
+	std::string input;
 
 	while (1)
 	{
@@ -34,9 +33,9 @@ int main(void)
             clearerr(stdin);
 			cout << endl;
         }
-		if (input.empty() || !is_input_valid(input))
+		if (input.empty() || !isInputValid(input))
 			continue;
 		harl.complain(input);
 	}
-	return EXIT_SUCCESS;	
+	return EXIT_SUCCESS;
 }
