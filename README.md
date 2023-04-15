@@ -104,6 +104,7 @@ Anything and probably everything on _Geek_for_geeks_
 
 <b>Useful links</b>:  
 Anything and probably everything on _Geek_for_geeks_  
+[Templates in C++](https://www.geeksforgeeks.org/templates-cpp/)  
 </details>
 
 <details>
@@ -122,14 +123,13 @@ Anything and probably everything on _Geek_for_geeks_
 <b>Subject: </b>
 <a href="./extras/en.subject_CPP09.pdf" target="_blank">CPP09 en_subject</a>
 
-Containers I've used:
-ex00 -> map
-ex01 -> stack
-ex02 -> vector &&
+Containers I've used:  
+ex00 -> map  
+ex01 -> stack  
+ex02 -> vector && list  
 
 <b>Useful links</b>:  
 Anything and probably everything on _Geek_for_geeks_  
-ChatGPT  
 [RPN Definition](https://en.wikipedia.org/wiki/Reverse_Polish_notation)  
 [RPN Calculator/Visualizer](https://www.dcode.fr/reverse-polish-notation)  
 [Merge-sort vs. Insertion-sort](https://www.geeksforgeeks.org/merge-sort-vs-insertion-sort/)  
