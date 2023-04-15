@@ -28,7 +28,7 @@ Base *generate(void)
 
 void identify(Base *p)
 {
-	// just to shut unused-value
+	// just to shut "unused-value" compiler warning
 	bool sucessfully_casted;
 
 	cout << "Identify with Base *: ";
@@ -63,19 +63,19 @@ void identify(Base &p)
 		(void)a;
 		cout << "A" << endl;
 	}
-	catch(const std::exception& e) {
+	catch (const std::exception& e) {
 		try {
 			B &b = dynamic_cast<B &>(p);
 			(void)b;
 			cout << "B" << endl;
 		}
-		catch(const std::exception& e) {
+		catch (const std::exception& e) {
 			try {
 				C &c = dynamic_cast<C &>(p);
 				(void)c;
 				cout << "C" << endl;
 			}
-			catch(const std::exception& e) {
+			catch (const std::exception& e) {
 				cout << "Invalid type" << endl;
 			}
 		}

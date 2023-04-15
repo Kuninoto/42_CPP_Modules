@@ -6,17 +6,14 @@ using std::endl;
 
 ClapTrap::ClapTrap(void) {};
 
-ClapTrap::ClapTrap(string name)
+ClapTrap::ClapTrap(std::string name)
 : name(name), hit_points(10), energy_points(10), attack_damage(0) {
 	cout << "Super Class (ClapTrap) constructor has been called!" << endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &to_copy)
 {
-	this->name = to_copy.name;
-	this->hit_points = to_copy.hit_points;
-	this->energy_points = to_copy.energy_points;
-	this->attack_damage = to_copy.attack_damage;
+	*this = to_copy;
 	cout << "Super Class (ClapTrap) copy constructor has been called!" << endl;
 }
 
@@ -37,7 +34,7 @@ ClapTrap::~ClapTrap(void) {
 	cout << "Super Class (ClapTrap) destructor has been called" << endl;
 };
 
-void ClapTrap::attack(const string& target)
+void ClapTrap::attack(const std::string& target)
 {
 	if (this->energy_points == 0)
 	{

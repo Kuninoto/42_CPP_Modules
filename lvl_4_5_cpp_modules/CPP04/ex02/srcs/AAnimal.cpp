@@ -26,11 +26,11 @@ AAnimal::~AAnimal(void) {
 	cout << "[AAnimal] default destructor has been called" << endl;
 }
 
-string AAnimal::getType(void) const {
+std::string AAnimal::getType(void) const {
 	return this->type;
 }
 
-void AAnimal::setType(string type) {
+void AAnimal::setType(std::string type) {
 	this->type = type;
 }
 

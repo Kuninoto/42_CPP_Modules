@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl;
 
-HumanB::HumanB(string name) : name(name) {}
+HumanB::HumanB(std::string name) : name(name) {}
 
 void HumanB::setWeapon(Weapon &weapon) {
 	this->weapon = &weapon;

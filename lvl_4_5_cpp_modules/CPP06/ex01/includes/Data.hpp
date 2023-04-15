@@ -2,10 +2,9 @@
 # define DATA_HPP
 
 # include <string>
-using std::string;
 
-typedef	struct s_Data {
-	string dummy_str;
-}				Data;
+typedef	struct s_data {
+	std::string dummy_str;
+}				data_t;
 
 #endif // DATA_HPP

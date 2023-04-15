@@ -5,36 +5,33 @@
 using std::cout;
 using std::endl;
 
-Fixed::Fixed(void) {
+Fixed::Fixed(void) : value(0) {
 	cout << "Default constructor called" << endl;
-	this->value = 0;
 }
 
-Fixed::Fixed(const int in_int)
-{
+Fixed::Fixed(const int inInt)
+: value(inInt * (1 << Fixed::bits)) {
 	cout << "Int constructor called" << endl;
-	this->value = in_int * (1 << Fixed::bits);
 }
 
-Fixed::Fixed(const float in_float)
-{
+Fixed::Fixed(const float inFloat)
+: value( roundf(inFloat * (1 << Fixed::bits)) ) {
 	cout << "Float constructor called" << endl;
-	this->value = roundf(in_float * (1 << Fixed::bits));
 }
 
 Fixed::Fixed(const Fixed &to_copy) {
 	cout << "Copy constructor called" << endl;
-	this->setRawBits(to_copy.getRawBits());
+	*this = to_copy;
 }
 
 Fixed &Fixed::operator=(const Fixed &original)
 {
 	cout << "Copy assignment operator called" << endl;
 	this->setRawBits(original.getRawBits());
-	return (*this);
+	return *this;
 }
 
-Fixed::~Fixed() {
+Fixed::~Fixed(void) {
 	cout << "Destructor called" << endl;
 };
 
@@ -54,8 +51,8 @@ int Fixed::toInt(void) const {
 	return this->value >> Fixed::bits;
 }
 
-std::ostream &operator<<(std::ostream &out, const Fixed &nbr)
+std::ostream &operator<<(std::ostream &stream, const Fixed &nbr)
 {
-	out << nbr.toFloat();
-	return (out);
+	stream << nbr.toFloat();
+	return stream;
 }

@@ -8,7 +8,6 @@ Dog::Dog(void) : AAnimal() {
 	cout << "[Dog] default constructor has been called" << endl;
 	this->setType("Dog");
 	this->brain = new Brain();
-
 }
 
 Dog::Dog(const Dog &to_copy) : AAnimal(to_copy)

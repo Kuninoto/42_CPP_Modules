@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl;
 
-ClapTrap::ClapTrap(string name)
+ClapTrap::ClapTrap(std::string name)
 : name(name), hit_points(10), energy_points(10), attack_damage(0) {
 	cout << "Default constructor <" << name << "> has been called!" << endl;
 }
@@ -35,7 +35,7 @@ ClapTrap::~ClapTrap(void) {
 	cout << "Destructor has been called" << endl;
 };
 
-void ClapTrap::attack(const string& target)
+void ClapTrap::attack(const std::string& target)
 {
 	if (this->energy_points == 0)
 	{

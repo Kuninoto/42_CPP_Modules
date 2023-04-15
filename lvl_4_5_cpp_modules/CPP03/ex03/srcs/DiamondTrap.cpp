@@ -6,7 +6,8 @@ using std::endl;
 
 DiamondTrap::DiamondTrap(void) : FragTrap(), ScavTrap() {};
 
-DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name)
+: ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
     this->name = name;
     this->hit_points = FragTrap::hit_points;
@@ -16,10 +17,10 @@ DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name"), FragTrap(
     cout << "Sub Class (DiamondTrap) constructor has been called" << endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &original) : ClapTrap(original), FragTrap(original), ScavTrap(original)
+DiamondTrap::DiamondTrap(const DiamondTrap &original)
+: ClapTrap(original), FragTrap(original), ScavTrap(original)
 {
 	*this = original;
-
 	cout << "Sub Class (DiamondTrap) copy constructor has been called" << endl; 
 }
 

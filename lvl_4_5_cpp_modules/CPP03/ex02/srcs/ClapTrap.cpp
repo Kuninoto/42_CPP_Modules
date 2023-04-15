@@ -4,7 +4,7 @@
 using std::cout;
 using std::endl;
 
-ClapTrap::ClapTrap(string name)
+ClapTrap::ClapTrap(std::string name)
 : name(name), hit_points(10), energy_points(10), attack_damage(0) {
 	cout << "Super Class (ClapTrap) <" << name << "> constructor has been called!" << endl;
 }
@@ -36,7 +36,7 @@ ClapTrap::~ClapTrap(void) {
 	cout << "Super Class (ClapTrap) destructor has been called" << endl;
 };
 
-void ClapTrap::attack(const string& target)
+void ClapTrap::attack(const std::string& target)
 {
 	if (this->energy_points == 0) {
 		cout << "ClapTrap is out of energy points!" << endl;

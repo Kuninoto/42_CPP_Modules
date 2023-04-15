@@ -1,7 +1,6 @@
 #include "Harl.hpp"
 #include <iostream>
 
-using std::string;
 using std::cout;
 using std::endl;
 
@@ -25,19 +24,19 @@ void Harl::info(void) {
 }
 
 void Harl::warning(void) {
-	cout << "[ WARNING ]" << endl;
-	cout << HARL_WARNING << endl;
+	cout << "[ WARNING ]" << '\n'
+		 << HARL_WARNING << endl;
 }
 
 void Harl::error(void) {
-	cout << "[ ERROR ]" << endl;
-	cout << HARL_ERROR << endl;
+	cout << "[ ERROR ]" << '\n'
+		 << HARL_ERROR << endl;
 }
 
-void Harl::complain(string level)
+void Harl::complain(std::string level)
 {
 	harl_func_t	harl_funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-	string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (size_t i = 0; i < 4; i += 1)
 	{
@@ -45,26 +44,26 @@ void Harl::complain(string level)
 		{
 			switch (i)
 			{
-			case 0:
-				(this->*harl_funcs[0])();
-				(this->*harl_funcs[1])();
-				(this->*harl_funcs[2])();
-				(this->*harl_funcs[3])();
-				break;
-			case 1:
-				(this->*harl_funcs[1])();
-				(this->*harl_funcs[2])();
-				(this->*harl_funcs[3])();
-				break;
-			case 2:
-				(this->*harl_funcs[2])();
-				(this->*harl_funcs[3])();
-				break;
-			case 3:
-				(this->*harl_funcs[3])();
-				break;
-			default:
-				break;
+				case 0:
+					(this->*harl_funcs[0])();
+					(this->*harl_funcs[1])();
+					(this->*harl_funcs[2])();
+					(this->*harl_funcs[3])();
+					break;
+				case 1:
+					(this->*harl_funcs[1])();
+					(this->*harl_funcs[2])();
+					(this->*harl_funcs[3])();
+					break;
+				case 2:
+					(this->*harl_funcs[2])();
+					(this->*harl_funcs[3])();
+					break;
+				case 3:
+					(this->*harl_funcs[3])();
+					break;
+				default:
+					break;
 			}
 			return;
 		}

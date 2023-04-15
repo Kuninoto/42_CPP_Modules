@@ -25,8 +25,7 @@ MutantStack<T>::MutantStack(void) {
 
 template<typename T>
 MutantStack<T>::MutantStack(MutantStack const& to_copy) {
-	if (this != &to_copy)
-		*this = to_copy;
+	*this = to_copy;
 	#ifdef DEBUG
 		cout << "[MutantStack] copy constructor called" << endl;
 	#endif

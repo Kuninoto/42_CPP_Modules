@@ -7,10 +7,9 @@ class Fixed {
 	public:
 		// Default constructor
 		Fixed(void);
-		//
-		Fixed(const int in_int);
-		//
-		Fixed(const float in_float);
+		// Parametrized Constructors
+		Fixed(const int inInt);
+		Fixed(const float inFloat);
 		// Copy constructor
 		Fixed(const Fixed &to_copy);
 		// Copy assignment operator overload
@@ -29,6 +28,6 @@ class Fixed {
 		static const int bits = 8;
 };
 
-std::ostream &operator<<(std::ostream &out, const Fixed &nbr);
+std::ostream &operator<<(std::ostream &stream, const Fixed &nbr);
 
 #endif // FIXED_HPP

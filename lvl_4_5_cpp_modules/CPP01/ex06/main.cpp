@@ -1,12 +1,13 @@
-#include <iostream> // std::string, std::cin, std::cout, std::endl
+#include <iostream> // std::cerr, std::cout, std::endl
 #include <cstdlib> // EXIT_* MACROS
 #include "Harl.hpp"
 
-using std::string;
-using std::cin;
-using std::cout;
 using std::cerr;
+using std::cout;
 using std::endl;
+
+#define ARGC_ERR "Invalid arguments"
+#define USAGE "Usage: ./harlFilter <level>\nlevels: DEBUG, INFO, WARNING, ERROR"
 
 int main(int argc, char **argv)
 {
@@ -14,8 +15,8 @@ int main(int argc, char **argv)
 
 	if (argc != 2 || !argv[1])
 	{
-		cerr << "Invalid arguments" << endl;
-		cout << "Usage: ./harlFilter <level>" << endl;
+		cerr << ARGC_ERR << '\n';
+		cout << USAGE << endl;
 		return EXIT_FAILURE;
 	}
 	harl.complain(argv[1]);	

@@ -2,7 +2,6 @@
 # define ANIMAL_HPP
 
 # include <string>
-using std::string;
 
 class Animal {
 	public:
@@ -11,13 +10,13 @@ class Animal {
 		Animal &operator=(const Animal &to_copy);
 		virtual ~Animal(void);
 
-		string getType(void) const;
-		void setType(string type);
+		std::string getType(void) const;
+		void setType(std::string type);
 
 		virtual void makeSound(void) const;
 
 	protected:
-		string type;
+		std::string type;
 };
 
 #endif // ANIMAL_HPP

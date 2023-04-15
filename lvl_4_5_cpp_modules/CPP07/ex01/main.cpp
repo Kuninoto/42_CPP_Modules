@@ -5,15 +5,11 @@
 
 using std::cout;
 using std::endl;
-using std::string;
 
 # define ARRAY_LEN 3
 
-int main(int argc, char **argv)
+int main(void)
 {
-	(void)argc;
-	(void)argv;
-
 	int int_array[] = {0, 0, 0};
 
 	cout << "BEFORE plus_one()" << endl;

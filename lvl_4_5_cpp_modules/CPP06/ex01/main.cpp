@@ -10,14 +10,14 @@ int	main(int argc, char **argv)
 {
     if (argc > 1 && argv)
     {
-        cerr << "serializer: error: command-line arguments aren't supported" << endl;
+        cerr << "serializer: error: command-line arguments aren't supported" << '\n';
         return EXIT_FAILURE;
     }
 
-    Data foo;
+    data_t foo;
     uintptr_t reinterpreted;
 
-    foo.dummy_str = string("test");
+    foo.dummy_str = std::string("test");
     reinterpreted = Serialization::serialize(&foo);
 
     cout << "OG foo (Data) Address = " << &foo << endl
@@ -29,7 +29,7 @@ int	main(int argc, char **argv)
 
     cout << endl;
 
-    Data *deserialized;
+    data_t *deserialized;
 
     deserialized = Serialization::deserialize(reinterpreted);
 

@@ -11,14 +11,16 @@ Fixed::Fixed(void) : value(0) {
 	#endif
 }
 
-Fixed::Fixed(const int in_int) : value(in_int * (1 << Fixed::bits))
+Fixed::Fixed(const int inInt)
+: value(inInt * (1 << Fixed::bits))
 {
 	#ifdef LOGS
 		cout << "Int constructor called" << endl;
 	#endif
 }
 
-Fixed::Fixed(const float in_float) : value(roundf(in_float * (1 << Fixed::bits)))
+Fixed::Fixed(const float inFloat)
+: value( roundf(inFloat * (1 << Fixed::bits)) )
 {
 	#ifdef LOGS
 		cout << "Float constructor called" << endl;
@@ -29,7 +31,7 @@ Fixed::Fixed(const Fixed &to_copy) {
 	#ifdef LOGS
 		cout << "Copy constructor called" << endl;
 	#endif
-	this->setRawBits(to_copy.getRawBits());
+	*this = to_copy;
 }
 
 Fixed &Fixed::operator=(const Fixed &original)
@@ -37,12 +39,11 @@ Fixed &Fixed::operator=(const Fixed &original)
 	#ifdef LOGS
 		cout << "Copy assignment operator called" << endl;
 	#endif
-	if (this != &original)
-		this->setRawBits(original.getRawBits());
+	this->setRawBits(original.getRawBits());
 	return *this;
 }
 
-Fixed::~Fixed() {
+Fixed::~Fixed(void) {
 	#ifdef LOGS
 		cout << "Destructor called" << endl;
 	#endif 
@@ -163,8 +164,8 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 	return b;
 }
 
-std::ostream& operator<<(std::ostream &out, const Fixed &nbr)
+std::ostream& operator<<(std::ostream &stream, const Fixed &nbr)
 {
-	out << nbr.toFloat();
-	return out;
+	stream << nbr.toFloat();
+	return stream;
 }

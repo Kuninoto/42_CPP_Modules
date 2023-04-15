@@ -4,8 +4,6 @@
 # include <string>
 # include "Brain.hpp"
 
-using std::string;
-
 class AAnimal {
 	public:
 		AAnimal(void);
@@ -13,13 +11,13 @@ class AAnimal {
 		AAnimal &operator=(const AAnimal &to_copy);
 		virtual ~AAnimal(void);
 
-		string getType(void) const;
-		void setType(string type);
+		std::string getType(void) const;
+		void setType(std::string type);
 
 		virtual void makeSound(void) const = 0;
 
 	protected:
-		string type;
+		std::string type;
 };
 
 #endif // AANIMAL_HPP

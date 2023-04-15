@@ -2,7 +2,6 @@
 # define WRONGANIMAL_HPP
 
 # include <string>
-using std::string;
 
 class WrongAnimal {
 	public:
@@ -11,13 +10,13 @@ class WrongAnimal {
 		WrongAnimal &operator=(const WrongAnimal &to_copy);
 		~WrongAnimal(void);
 
-		string getType(void) const;
-		void setType(string type);
+		std::string getType(void) const;
+		void setType(std::string type);
 
 		void makeSound(void) const;
 
 	protected:
-		string type;
+		std::string type;
 };
 
 #endif // WRONGANIMAL_HPP

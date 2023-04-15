@@ -6,7 +6,7 @@ using std::endl;
 
 FragTrap::FragTrap(void) : ClapTrap() {};
 
-FragTrap::FragTrap(string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	this->hit_points = 100;
 	this->energy_points = 100;

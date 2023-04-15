@@ -11,14 +11,13 @@ Dog::Dog(void) : Animal() {
 
 Dog::Dog(const Dog &to_copy) : Animal(to_copy)
 {
-	this->type = to_copy.type;
+	*this = to_copy;
 	cout << "[Dog] copy constructor has been called " << endl;
 }
 
 Dog& Dog::operator=(const Dog &to_copy)
 {
-	if (this != &to_copy)
-		*this = to_copy;
+	*this = to_copy;
 	cout << "[Dog] copy assignment constructor has been called " << endl;
 	return *this;
 }

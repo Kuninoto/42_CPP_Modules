@@ -6,7 +6,7 @@
 class WrongCat : public WrongAnimal {
 	public:
 		WrongCat(void);
-		WrongCat(const WrongCat &to_copy);
+		WrongCat(const WrongCat &original);
 		WrongCat &operator=(const WrongCat &to_copy);
 		~WrongCat(void);
 
