@@ -10,9 +10,9 @@ DiamondTrap::DiamondTrap(std::string name)
 : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
     this->name = name;
-    this->hit_points = FragTrap::hit_points;
-    this->energy_points = ScavTrap::energy_points;
-    this->attack_damage = FragTrap::attack_damage;
+    this->hit_points = FragTrap::defaultHitPoints;
+    this->energy_points = ScavTrap::defaultEnergyPoints;
+    this->attack_damage = FragTrap::defaultAttackDamage;
 
     cout << "Sub Class (DiamondTrap) constructor has been called" << endl;
 }

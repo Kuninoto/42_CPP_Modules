@@ -11,6 +11,10 @@ class FragTrap : virtual public ClapTrap
 		~FragTrap(void);
 
 		void highFivesGuys(void);
+
+		static const int defaultHitPoints = 100;
+		static const int defaultEnergyPoints = 100;
+		static const int defaultAttackDamage = 30;
 };
 
 #endif // FRAGTRAP_HPP

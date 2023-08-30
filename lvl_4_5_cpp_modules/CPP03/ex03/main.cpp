@@ -8,6 +8,7 @@ using std::endl;
 int main(void)
 {
     DiamondTrap Bozo("Bozo");
+   /*  DiamondTrap Bozo("Bozo");
     DiamondTrap Rato("Rato");
     DiamondTrap	Clone;
 
@@ -50,5 +51,5 @@ int main(void)
 
     cout << endl;
 
-    return EXIT_SUCCESS;
+    return EXIT_SUCCESS; */
 }
