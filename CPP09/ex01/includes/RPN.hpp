@@ -7,8 +7,8 @@
 class RPN {
     public:
         RPN(void);
-        RPN(const RPN &to_copy);
-        RPN &operator=(const RPN &to_copy);
+        RPN(const RPN& to_copy);
+        RPN &operator=(const RPN& to_copy);
         ~RPN(void);
 
         static bool valid_expression(const std::string& expr);

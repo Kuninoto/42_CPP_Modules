@@ -55,7 +55,7 @@ float BitcoinExchange::getRateFromDataBase(const std::string& date)
     return (--this->dataBase.lower_bound(date))->second;
 }
 
-bool BitcoinExchange::isDateInCorrectFormat(const std::string &date)
+bool BitcoinExchange::isDateInCorrectFormat(const std::string& date)
 {
 	if (date.empty())
 		return false;
